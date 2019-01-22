@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Card } from "semantic-ui-react";
+import { TextArea, Grid,  Card, Menu, Icon } from "semantic-ui-react";
 import '../css/card.css';
 export default class Cards extends Component {
   constructor(props) {
@@ -49,12 +49,7 @@ goToBack(event){
                 <div className="ten wide column" id="text1">
                   {this.state.isInEditMode === true ? (
                     <div>
-                      <input
-                      className="ui input"
-                        type="text"
-                        defaultValue={this.state.value}
-                        onChange={this.editText.bind(this)}
-                      />
+                       <TextArea placeholder='Tell us more' defaultValue={this.state.value} onChange={this.editText.bind(this)} />
                       <button id="style" className="ui primary button" onClick={this.goToBack.bind(this)}>X</button>
                       <button  className="ui primary button" onClick={this.UpdateQuestion.bind(this)}>
                         Update
@@ -64,35 +59,26 @@ goToBack(event){
                     <Card.Header>{this.state.value}</Card.Header>
                   )}
                 </div>
-                <div className="six wide column">
-                  <div className="ui labeled icon menu">
-                    <a
-                      className="item"
-                      href="/"
-                      data-tooltip="delete"
-                      data-position="bottom left"
-                    >
-                      <i className="trash icon" />
-                    </a>
-                    <a
-                      className="item"
-                      href="/"
-                      data-tooltip="edit"
-                      data-position="bottom left"
-                      onClick={this.changeEditMode.bind(this)}
-                    >
-                      <i className="edit icon" />
-                    </a>
-                    <a
-                      className="item"
-                      href="/"
-                      data-tooltip="publish"
-                      data-position="bottom left"
-                    >
-                      <i className="arrow circle up icon" />
-                    </a>
-                  </div>
-                </div>
+
+                <Grid columns={6} stackable>
+                <Menu compact>
+                <Menu.Item name='gamepad'>
+                    <Icon name='trash' />
+                  </Menu.Item>
+                  <Menu.Item
+                    name='video camera'
+                    onClick={this.changeEditMode.bind(this)}
+                  >
+                    <Icon name='edit' />
+                  </Menu.Item>
+
+                  <Menu.Item
+                    name='video play'>
+                    <Icon name='send' />
+                  </Menu.Item>
+                </Menu>
+                </Grid>
+
               </div>
             </Card.Content>
           </Card>

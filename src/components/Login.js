@@ -88,7 +88,7 @@ class Login extends React.Component {
             verticalAlign="middle"
           >
             <Grid.Column verticalAlign='middle' style={{ maxWidth: 450 }}>
-              <Segment raised className="red-bg">
+              <Segment raised>
                 <Header as="h2" textAlign="center">
                   Log-in
                 </Header>
