@@ -17,14 +17,8 @@ export default class Content extends Component {
     };
   }
 
-  displayQuestion = () => {
-    // this.setState({
-    //     displayQuestions: !this.state.displayQuestions
-    // })
-    ReactDOM.render(
-      <Cards questions={this.state.questions[0]} />,
-      document.getElementById("ques")
-    );
+  displayQuestion  () {
+  
   };
 
   handleOnChangeInput(e) {
