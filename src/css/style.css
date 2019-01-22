@@ -1,17 +1,35 @@
-.stripes{
-  background: -webkit-repeating-linear-gradient(left, #d32823, #d32823 60px, #fff 10px, #fff 77px) !important;
-  background: -o-repeating-linear-gradient(left, #d32823, #d32823 60px, #fff 10px, #fff 77px) !important;
-  background: repeating-linear-gradient(to right, #d32823, #d32823 60px, #fff 10px, #fff 77px) !important;
+.stripes {
+  background: -webkit-repeating-linear-gradient(
+    left,
+    #d32823,
+    #d32823 60px,
+    #fff 10px,
+    #fff 77px
+  ) !important;
+  background: -o-repeating-linear-gradient(
+    left,
+    #d32823,
+    #d32823 60px,
+    #fff 10px,
+    #fff 77px
+  ) !important;
+  background: repeating-linear-gradient(
+    to right,
+    #d32823,
+    #d32823 60px,
+    #fff 10px,
+    #fff 77px
+  ) !important;
 }
-.m-b{
+.m-b {
   margin-bottom: 50px;
 }
-.yellow-bg{
-  background: #ffe700 !important
+.yellow-bg {
+  background: #ffe700 !important;
 }
-.red-bg{
+.red-bg {
   background: #d32823 !important;
 }
-.txt-clr{
+.txt-clr {
   color: white !important;
 }
