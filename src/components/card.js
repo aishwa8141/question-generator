@@ -7,9 +7,11 @@ export default class Cards extends Component {
     super(props);
     this.state = {
       isInEditMode: false,
-      value: this.props.questions
+      value: this.props.questions,
+      isupdated:false
     };
   }
+ 
 
   changeEditMode(event) {
     event.preventDefault();
@@ -22,7 +24,8 @@ export default class Cards extends Component {
   UpdateQuestion(event) {
     event.preventDefault();
     this.setState({
-      isInEditMode: false
+      isInEditMode: false,
+      update: true
     });
   }
   editText(event) {
@@ -38,6 +41,12 @@ export default class Cards extends Component {
       value: this.props.questions,
       isInEditMode: false
     });
+  }
+  addCredits = () => {
+     console.log('in credits');
+     this.setState({
+       isupdated:true
+     })
   }
   render() {
     console.log("dad", this.state.value, "the", this.props.questions);
@@ -58,7 +67,7 @@ export default class Cards extends Component {
                   <Form>
                     <TextArea
                       rows={2}
-                      defaultValue={this.props.value.title}
+                      defaultValue={this.state.value}
                       onChange={this.editText.bind(this)}
                       type="text"
                     />
@@ -89,8 +98,8 @@ export default class Cards extends Component {
                     </div>
 
                     <div className="six wide column">
-                      <div className="ui icon menu">
-                        <a
+                      <div className="ui icon menu" id="childIcons">
+                        <a id="iconSize"
                           className="item"
                           href="/"
                           data-tooltip="delete"
@@ -99,6 +108,7 @@ export default class Cards extends Component {
                           <i className="trash icon" />
                         </a>
                         <a
+                        id="iconSize"
                           className="item"
                           href="/"
                           data-tooltip="edit"
@@ -109,11 +119,12 @@ export default class Cards extends Component {
                         </a>
                         <a
                           className="item"
-                          href="/"
+                          id="iconSize"
                           data-tooltip="publish"
                           data-position="bottom left"
+                          onClick={this.addCredits}
                         >
-                          <i className="send icon" />
+                       {this.state.isupdated ? (<i className="send icon disabled"></i>):  <i className="send icon" />}
                         </a>
                       </div>
                     </div>

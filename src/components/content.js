@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import Cards from "./card";
-
+import Navbar from "./navbar";
+import '../css/createContent.css';  
 export default class Content extends Component {
   constructor(props) {
     super(props);
@@ -49,7 +50,11 @@ export default class Content extends Component {
   render() {
     return (
       <Fragment>
-        <div className="ui raised very padded text container segment">
+        <Navbar/>
+        <div className="ui centered align grid" id="align">
+          <h2>Generated Contents and Questions </h2>
+        </div>
+        <div className="ui raised very padded text container segment" id="align">
           <h2 className="ui header">Dogs Roles with Humans </h2>
           <p>
             Domestic dogs inherited complex behaviors, such as bite inhibition,
