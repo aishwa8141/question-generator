@@ -28,14 +28,6 @@
         {
           "questionId": 1,
           "description": "lorem ipsum?"
-        },
-        {
-          "questionId": 2,
-          "description": "lorem ipsum?"
-        },
-        {
-          "questionId": 3,
-          "description": "lorem ipsum?"
         }
       ]
     },

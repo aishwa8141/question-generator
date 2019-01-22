@@ -5,3 +5,18 @@
   margin-left: 0.5rem;
   margin-top: 0.5rem;
 }
+#cardDesign{
+    margin-top: 2rem;
+}
+#header{
+    font-size: inherit;
+}
+#childIcons {
+    margin-bottom: 0;
+    width: max-content;
+}
+@media only screen and (max-width: 483px) and (min-width:312px) {
+    #iconSize{
+        padding: 0.928571em 0.42857em; 
+    }
+}

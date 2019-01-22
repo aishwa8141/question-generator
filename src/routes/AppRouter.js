@@ -4,7 +4,8 @@ import Search from "../components/search";
 import Login from "../components/Login";
 import Card from "../components/card";
 import Home from "../components/Home";
-import CreateContent from "../components/createContent";
+import Content from "../components/content";
+import { QuestionPage } from "../components/questionPage";
 class AppRouter extends React.Component {
   render() {
     return (
@@ -15,7 +16,8 @@ class AppRouter extends React.Component {
             <Route path="/home" component={Home} />
             <Route path="/cards" component={Card} />
             <Route path="/search" component={Search} />
-            <Route path="/content" component={CreateContent} />
+            <Route path="/contentSearch" component={QuestionPage} />
+            <Route path="/content" component={Content} />
           </Switch>
         </BrowserRouter>
       </Fragment>
