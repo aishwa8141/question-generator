@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Autosuggest from "react-autosuggest";
 import "../css/search.css";
 import axios from "axios";
 import Content from "./content";
 import ReactDOM from "react-dom";
-import { Card } from "semantic-ui-react";
-import * as searchData from './searchData';
-const API_URL = "http://localhost:3001/search";
-const getSuggestionValue = suggestion => suggestion.name;
 
+import * as searchData from "./searchData";
+import Navbar from "./navbar";
+
+const getSuggestionValue = suggestion => suggestion.name;
 
 function renderSuggestion(suggestion) {
   return <span>{suggestion.name}</span>;
@@ -69,11 +69,11 @@ export default class Search extends Component {
       .catch(err => {
         console.log("Error retreiving Info");
       });
-  }
+  };
   getSuggestions(value) {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
-    console.log(this.state.results)
+    console.log(this.state.results);
     return inputLength === 0
       ? []
       : this.state.results.filter(
@@ -110,7 +110,10 @@ export default class Search extends Component {
 
   displayContent = () => {
     if (this.state.showContent === true)
-      ReactDOM.render(<Content />, document.getElementById("content"));
+      ReactDOM.render(
+        <Content createContent={this.state.createContent} />,
+        document.getElementById("content")
+      );
   };
 
   createContent = () => {
@@ -127,82 +130,35 @@ export default class Search extends Component {
       onChange: this.onChange
     };
     return (
-      <div>
-        <div className="ui two column centered grid">
-          {/* <h1> Search </h1> */}
-          <div className="column">
-            <Autosuggest
-              suggestions={suggestions}
-              renderInputComponent={renderInputComponent}
-              onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-              onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-              getSuggestionValue={getSuggestionValue}
-              renderSuggestion={renderSuggestion}
-              inputProps={inputProps}
-              onSuggestionSelected={this.onSuggestionSelected}
-            />
-          </div>
+      <Fragment>
+        <Navbar />
+        <div className="ui centered align grid" id="align">
+          <h2>Search Contents and Start Generate Questions</h2>
         </div>
-
-        {this.state.textbox === true ? (
-          // <Card className="ui two column centered grid" id="content">
-          //   <div className="userEditStory">Do you have any story??</div>
-          //   <button
-          //     className="ui primary button right floated"
-          //     onClick={this.createContent}
-          //   >
-          //     YES
-          //   </button>
-          // </Card>
-
-          <div className="ui vertical stripe segment">
-            <div className="ui middle aligned stackable grid container">
-              <div className="row">
-                <div className="eight wide column">
-                  <h3 className="ui header">Do you have any story??</h3>
-                  <p>
-                    We can give your company superpowers to do things that they
-                    never thought possible. Let us delight your customers and
-                    empower your needs...through pure data analytics.
-                  </p>
-                  <h3 className="ui header">We Make Bananas That Can Dance</h3>
-                  <p>
-                    Yes that's right, you thought it was the stuff of dreams,
-                    but even bananas can be bioengineered.
-                  </p>
-                </div>
-                <div className="six wide right floated column">
-                  <img
-                    className="ui large bordered rounded image"
-                    src="https://ak7.picdn.net/shutterstock/videos/13351367/thumb/1.jpg"
-                  />
-                </div>
-              </div>
-              <div className="row">
-                <div className="center aligned column">
-                  <a className="ui huge button" onClick={this.createContent}>
-                    Start creating story
-                  </a>
-                </div>
-              </div>
+        <div>
+          <div className="ui two column centered grid">
+            {/* <h1> Search </h1> */}
+            <div className="column">
+              <Autosuggest
+                suggestions={suggestions}
+                renderInputComponent={renderInputComponent}
+                onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+                onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+                getSuggestionValue={getSuggestionValue}
+                renderSuggestion={renderSuggestion}
+                inputProps={inputProps}
+                onSuggestionSelected={this.onSuggestionSelected}
+              />
             </div>
           </div>
-        ) : (
-          ""
-        )}
 
-        <div id="content" />
-        {this.state.createContent === true ? (
-          <Content createContent={this.state.createContent} />
-        ) : (
-          ""
-        )}
-        {this.state.showContent === true ? (
-          <Content createContent={this.state.createContent} />
-        ) : (
-          ""
-        )}
-      </div>
+          {this.state.showContent === true ? (
+            <Content Content={this.state.showContent} />
+          ) : (
+            ""
+          )}
+        </div>
+      </Fragment>
     );
   }
 }

@@ -6,11 +6,8 @@ import {
   Grid,
   Header,
   Image,
-  Message,
   Segment
 } from "semantic-ui-react";
-import { Redirect } from "react-router";
-// import clientID from "../../config/keys";
 import "../css/style.css";
 
 class Login extends React.Component {
@@ -19,30 +16,30 @@ class Login extends React.Component {
 
     // userService.logout();
     this.state = {
-      userid: '',
+      userid: "",
       submitted: false,
       loading: false,
-      error: ''
+      error: ""
     };
-    this.handleChange =  this.handleChange.bind(this);
-    this.handleSubmit =  this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e){
-    const {name, value} =  e.target;
-    this.setState({ [name]: value});
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   }
-  handleSubmit(e){
+  handleSubmit(e) {
     e.preventDefault();
 
-    this.setState({submitted: true});
+    this.setState({ submitted: true });
 
-    const {userid} =  this.state;
-    if(!userid){
+    const { userid } = this.state;
+    if (!userid) {
       return;
     }
 
-    this.setState({loading: true});
+    this.setState({ loading: true });
 
     console.log(this.state.userid);
 
@@ -72,10 +69,10 @@ class Login extends React.Component {
   }
 
   render() {
-    const {userid, submitted, loading, error} =  this.state;
+    // const { userid, submitted, loading, error } = this.state;
     return (
       <Container>
-        <Segment style={{ minHeight: '100vh', padding: '1em 0em' }}>
+        <Segment style={{ minHeight: "100vh", padding: "1em 0em" }}>
           <Image
             src="./images/buzzinga.png"
             size="big"
@@ -87,24 +84,28 @@ class Login extends React.Component {
             style={{ height: "100%" }}
             verticalAlign="middle"
           >
-            <Grid.Column verticalAlign='middle' style={{ maxWidth: 450 }}>
+            <Grid.Column verticalAlign="middle" style={{ maxWidth: 450 }}>
               <Segment raised>
                 <Header as="h2" textAlign="center">
                   Log-in
                 </Header>
-                <Form name="loginForm" onSubmit={this.handleSubmit} size="large">
-                    <Form.Input
-                      fluid
-                      icon="user"
-                      iconPosition="left"
-                      placeholder="User Id"
-                      name="userid"
-                      value={this.state.userid}
-                      onChange={this.handleChange}
-                    />
-                    <Button  color="black" fluid size="large">
-                      Login
-                    </Button>
+                <Form
+                  name="loginForm"
+                  onSubmit={this.handleSubmit}
+                  size="large"
+                >
+                  <Form.Input
+                    fluid
+                    icon="user"
+                    iconPosition="left"
+                    placeholder="User Id"
+                    name="userid"
+                    value={this.state.userid}
+                    onChange={this.handleChange}
+                  />
+                  <Button color="black" fluid size="large">
+                    Login
+                  </Button>
                 </Form>
               </Segment>
             </Grid.Column>

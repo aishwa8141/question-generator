@@ -37,23 +37,23 @@
 
 .ui.menu {
   border: 0px;
-    box-shadow: none;
-    border-radius: 0px;
+  box-shadow: none;
+  border-radius: 0px;
 }
 
-#iconrupee{
+#iconrupee {
   font-size: 60px;
   color: gold;
 }
 
-#nav{
+#nav {
   height: 100px;
 }
-#nav a img{
+#nav a img {
   width: 6rem !important;
   height: 73px;
- }
- #text{
+}
+#text {
   text-align: -webkit-auto;
   margin-top: 2rem;
- }
+}
