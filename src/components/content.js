@@ -10,20 +10,27 @@ export default class Content extends Component {
       textareaLength: "",
       storyName: "",
       enablebutton: true,
-      questions: []
+      questions: [],
+      id:this.props.location.state.Id
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    // console.log("called")
   }
-  displayQuestion = () => {
-    this.setState({
-      questions: [
-        { id: "fdsd", title: "Why is the sky blue?" },
-        { id: "adsf", title: "Who invented pizza?" },
-        { id: "afdsf", title: "Is green tea overrated?" }
-      ]
-    });
-    console.log(this.state.questions);
-  };
+  componentDidMount(){
+    console.log("called",this.props.location.state.description.name);
+    console.log("called 2",this.props.location.state.Id)
+
+  }
+  // displayQuestion = () => {
+  //   this.setState({
+  //     questions: [
+  //       { id: "fdsd", title: "Why is the sky blue?" },
+  //       { id: "adsf", title: "Who invented pizza?" },
+  //       { id: "afdsf", title: "Is green tea overrated?" }
+  //     ]
+  //   });
+  //   console.log(this.state.questions);
+  // };
   handleOnChangeInput(e) {
     e.preventDefault();
     if (e.target.type === "text") {
@@ -41,39 +48,24 @@ export default class Content extends Component {
       }
     }
   }
-  handleSubmit(event) {
+  handleSubmit(e) {
+    e.preventDefault();
     console.log("shajhdk");
     alert("An essay was submitted: " + this.state.storyName);
-    event.preventDefault();
+    e.preventDefault();
   }
 
   render() {
     return (
-      <Fragment>
+      <Fragment >
         <Navbar/>
         <div className="ui centered align grid" id="align">
           <h2>Generated Contents and Questions </h2>
         </div>
         <div className="ui raised very padded text container segment" id="align">
-          <h2 className="ui header">Dogs Roles with Humans </h2>
+          <h2 className="ui header">{this.props.location.state.description.name}</h2>
           <p>
-            Domestic dogs inherited complex behaviors, such as bite inhibition,
-            from their wolf ancestors, which would have been pack hunters with
-            complex body language. These sophisticated forms of social cognition
-            and communication may account for their trainability, playfulness,
-            and ability to fit into human households and social situations, and
-            these attributes have given dogs a relationship with humans that has
-            enabled them to become one of the most successful species on the
-            planet today.
-          </p>
-          <p>
-            The dogs' value to early human hunter-gatherers led to them quickly
-            becoming ubiquitous across world cultures. Dogs perform many roles
-            for people, such as hunting, herding, pulling loads, protection,
-            assisting police and military, companionship, and, more recently,
-            aiding handicapped individuals. This impact on human society has
-            given them the nickname "man's best friend" in the Western world. In
-            some cultures, however, dogs are also a source of meat.
+            {this.props.location.state.description.content}
           </p>
 
           <button
@@ -88,8 +80,8 @@ export default class Content extends Component {
           {/* <div className="ui centered align grid">
           <h3>Generated Questions<Icon name="question"></Icon></h3>
           </div> */}
-          {this.state.questions.map(data => (
-            <Cards questions={data.title} />
+          {this.props.location.state.description.question.map(data => (
+            <Cards questions={data.question} />
           ))}
         </div>
       </Fragment>

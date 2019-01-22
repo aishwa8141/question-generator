@@ -7,7 +7,7 @@ import {
   Icon,
   Segment
 } from "semantic-ui-react";
-import Question from './question';
+
 
 import Navbar from "./navbar";
 
@@ -85,7 +85,7 @@ export default class Home extends Component {
             </Grid.Row>
           </Grid>
         </Segment>
-        <Question></Question>
+       
       </Fragment>
     );
   }
