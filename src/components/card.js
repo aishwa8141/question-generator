@@ -132,6 +132,7 @@ pauseOnVisibilityChange
                     Cancel
                   </button>
                   <button
+                  id="style"
                     className="ui primary button right floated"
                     onClick={this.UpdateQuestion.bind(this)}
                   >

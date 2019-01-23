@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "../components/Login";
 import Content from "../components/content";
 import ContentsPage from "../components/ContentsPage";
-import { QuestionPage } from "../components/questionPage";
+// import { QuestionPage } from "../components/questionPage";
 class AppRouter extends React.Component {
   render() {
     return (
@@ -11,7 +11,7 @@ class AppRouter extends React.Component {
         <BrowserRouter>
           <Switch>
             <Route path="/" component={Login} exact={true} />
-            <Route path="/home" component={QuestionPage} />
+            {/* <Route path="/home" component={QuestionPage} /> */}
             <Route path="/contentPage" component={Content} />
             <Route path="/contentList" component={ContentsPage} />
           </Switch>
