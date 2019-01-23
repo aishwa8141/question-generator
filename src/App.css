@@ -31,30 +31,6 @@
   }
 }
 
-#card {
-  width: auto;
- 
-}
-
-.ui.menu {
-  border: 0px;
-  box-shadow: none;
-  border-radius: 0px;
-}
-
-#iconrupee {
-  font-size: 60px;
-  color: gold;
-}
-
-#nav {
-  height: 100px;
-}
-#nav a img {
-  width: 6rem !important;
-  height: 73px;
-}
-#text {
-  text-align: -webkit-auto;
-  margin-top: 2rem;
+#root{
+  background: #f8f8f8;
 }

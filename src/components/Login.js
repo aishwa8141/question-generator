@@ -50,14 +50,6 @@ class Login extends React.Component {
     this.setState({ loading: true });
 
     console.log(this.state.userid);
-
-    // userService.login(userid).then(
-    //   user => {
-    //     const { from } = this.props.location.state || { from : {pathname: "/"}};
-    //     this.props.history.push(from);
-    //   },
-    //   error => this.setState({error, loading:false})6d1ed2b0-51ec-4078-9b98-6f4989d837c2
-    // )
   }
   handleScan(data) {
     if (data) {
@@ -93,7 +85,6 @@ class Login extends React.Component {
   }
 
   render() {
-    // const { userid, submitted, loading, error } = this.state;
     const previewStyle = {
       width: '100%',
       margin: 'auto'

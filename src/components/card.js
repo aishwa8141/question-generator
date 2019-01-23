@@ -81,7 +81,7 @@ export default class Cards extends Component {
     return (
       <Fragment>
         <div className="ui very padded text container">
-          <Card fluid color="red" id="card">
+          <Card fluid  id="card">
             <Card.Content>
               {this.state.isInEditMode === true ? (
                 <div>
@@ -95,13 +95,13 @@ export default class Cards extends Component {
                   </Form>
                   <button
                     id="style"
-                    className="ui primary button"
+                    className="ui warning button right floated"
                     onClick={this.goToBack.bind(this)}
                   >
                     Cancel
                   </button>
                   <button
-                    className="ui primary button"
+                    className="ui primary button right floated"
                     onClick={this.UpdateQuestion.bind(this)}
                   >
                     Update
@@ -111,20 +111,19 @@ export default class Cards extends Component {
                 <Fragment>
                   <div className="ui grid">
                     <div className="ten wide column" id="text1">
-                      <Card.Header>
+                      <Card.Header><span>{this.props.num}</span>.&nbsp; &nbsp; &nbsp;
                         {this.state.update === true
                           ? this.state.value
                           : this.props.questions}
                       </Card.Header>
                     </div>
-
-                    <div className="six wide column">
-                      <div className="ui icon menu" id="childIcons">
+                    <div className="six wide column" id="text2">
+                      <div className="ui icon menu right floated" id="childIcons">
                         {this.state.isupdated ? (
                           <a
                             id="iconSize"
                             className="item"
-                            // href="/"
+                            href="/"
                             data-tooltip="It's published"
                             data-position="bottom left"
                           >
@@ -146,7 +145,7 @@ export default class Cards extends Component {
                           <a
                             id="iconSize"
                             className="item"
-                            // href="/"
+                            href="/"
                             data-tooltip="It's published"
                             data-position="bottom left"
                           >
@@ -156,7 +155,7 @@ export default class Cards extends Component {
                           <a
                             id="iconSize"
                             className="item"
-                            //  href="/"
+                             href="/"
                             data-tooltip="edit"
                             data-position="bottom left"
                             onClick={this.changeEditMode.bind(this)}
@@ -168,7 +167,7 @@ export default class Cards extends Component {
                         {this.state.isupdated ? (
                           <a
                             className="item"
-                            // href="/content"
+                            href="/content"
                             id="iconSize"
                             data-tooltip="It's published"
                             data-position="bottom left"
@@ -179,7 +178,7 @@ export default class Cards extends Component {
                           <a
                             className="item"
                             id="iconSize"
-                            // href="/content"
+                            href="/"
                             data-tooltip="publish"
                             data-position="bottom left"
                             onClick={this.addCredits}
