@@ -38,7 +38,7 @@ export default class Content extends Component {
 		<Fragment  key={i}>
 			
 			<a className="ui orange right ribbon label align centered">{ item.question.length}&nbsp;Questions</a>
-			<Card key={i}fluid header={item.name} meta={ item.question.length +" Questions"} description={item.shortDescription} onClick={this.gotoContent.bind(this,item)}	></Card>
+			<Card key={i}fluid header={item.name}  description={item.shortDescription} onClick={this.gotoContent.bind(this,item)}	></Card>
 			
 		   </Fragment>
 	)

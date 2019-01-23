@@ -160,7 +160,7 @@ pauseOnVisibilityChange
                 <Fragment>
                   <div className="ui grid">
                     <div className="ten wide column" id="text1">
-                      <Card.Header><span>{this.state.delete === true ? (this.props.num-1):(this.props.num)}</span>.&nbsp; &nbsp; &nbsp;
+                      <Card.Header>
                         {this.state.update === true
                           ? this.state.value
                           : this.props.questions}
