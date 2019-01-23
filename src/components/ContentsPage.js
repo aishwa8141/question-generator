@@ -1,7 +1,6 @@
 import React, { Fragment, Component } from "react";
 import {
-  Header,
-  Segment,
+
   Card,
   Container
 } from "semantic-ui-react";
@@ -11,26 +10,23 @@ import Navbar from "./navbar";
 import * as content from "./contentData";
 
 export default class Content extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
+		
 		this.randomList = Array();
-		console.log("Length ", this.randomList.length)
 		while(this.randomList.length <5) {
 			var num = Math.floor(Math.random()*20)
 			if (this.randomList.indexOf(num) === -1) {
 				this.randomList.push(num)
 			}
 		}
-		console.log("Random number: ", this.randomList);
 		this.items = this.randomList.map( num => content.list.data[num])
 	}
 	gotoContent(index) {
-        console.log('content')
         this.props.history.push({
             pathname:'/contentPage', 
             state:{description:index}
         });
-        console.log("data", index);
       }
 	contentList = () => {
 		

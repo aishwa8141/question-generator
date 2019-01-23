@@ -31,31 +31,39 @@ class Login extends React.Component {
   handleChange(e) {
     console.log(e);
     console.log(e.target);
-    this.setState({ userid : e.target.value });
+
+    this.setState({ userid: e.target.value });
   }
   handleSubmit(e) {
     e.preventDefault();
-    const { userid } = this.state;
+    const userid = this.state.userid;
     if (!userid) {
       return;
     }
+    this.setState({ submitted: true });
+    this.setState({ loading: true });
     const request = {
       code: this.state.userid,
       roleCode: "TCH1",
       stallCode: "STA6",
       ideaCode: "IDE6"
     };
-    this.setState({ submitted: true });
+    
     axios
       .post(`https://dev.ekstep.in/api/devcon/v3/login`, { request })
-      .then(res => console.log("respomn", res))
-      .catch(e => console.log("error"));
-      this.props.history.push({
-        pathname:'/contentList',
-        state:{}
+      .then(res => {
+        console.log("respomn", res);
+        if(res.data.result.Visitor){
+        this.props.history.push({
+          pathname: "/contentList",
+          state: res.data.result.Visitor
+        });
+      }
       })
-    this.setState({ loading: true });
-    console.log(this.state.userid);
+      
+      .catch(e =>{ console.log("error")
+    return});
+
   }
   handleScan(data) {
     if (data) {

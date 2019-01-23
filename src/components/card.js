@@ -8,7 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { css } from "glamor";
 
 export default class Cards extends Component {
-   creditCount = 0; emptyValue = "";
+  creditCount = 0;
+  emptyValue = "";
   constructor(props) {
     super(props);
     this.state = {
@@ -20,19 +21,16 @@ export default class Cards extends Component {
       quesNumber:this.props.num
     };
   }
-  componentDidMount(){
-    axios.get('http://localhost:3002/users').then(res => {
-      console.log('resdsfsd',res);
-    this.creditCount = res.data[0].credit
-    })
+  componentDidMount() {
+    // axios.get("http://localhost:3002/users").then(res => {
+    //   this.creditCount = res.data[0].credit;
+    // });
   }
   changeEditMode(event) {
     event.preventDefault();
     this.setState({
       isInEditMode: !this.state.isInEditMode
     });
-    console.log("mpode", this.state.isInEditMode);
-    // this.renderEditView();
   }
   UpdateQuestion(event) {
     event.preventDefault();
@@ -59,31 +57,28 @@ export default class Cards extends Component {
   }
   goToBack(event) {
     event.preventDefault();
-    console.log("back");
     this.setState({
       value: this.props.questions,
       isInEditMode: true
     });
   }
-  addCredits = (event) => {
+  addCredits = event => {
     event.preventDefault();
-  
-    console.log("in credits",this.creditCount);
+
     this.creditCount++;
     this.setState({
       isupdated: true,
-      count:this.creditCount
+      count: this.creditCount
     });
     const newCredit={
       id:1,
       name:"aishwarya",
       credit:this.creditCount
     }
-    console.log('count')
-    axios.put(`http://localhost:3002/users/${newCredit.id}`,newCredit)
-          .then(res => {
-            console.log("credit",res);
-          });
+    // axios.put(`http://localhost:3002/users/${newCredit.id}`,newCredit)
+    //       .then(res => {
+    //         console.log("credit",res);
+    //       });
           toast.info("Successfully published!", {
             position: toast.POSITION.TOP_CENTER,
             className: css({
@@ -116,7 +111,6 @@ export default class Cards extends Component {
     console.log('delete',this.state.value)
   }
   render() {
-    console.log("dad", this.state.value, "the", this.props.questions);
     return (
       <Fragment>
 <ToastContainer
@@ -149,7 +143,7 @@ pauseOnVisibilityChange
                     Cancel
                   </button>
                   <button
-                  id="style"
+                    id="style"
                     className="ui primary button right floated"
                     onClick={this.UpdateQuestion.bind(this)}
                   >
@@ -167,7 +161,10 @@ pauseOnVisibilityChange
                       </Card.Header>
                     </div>
                     <div className="six wide column" id="text2">
-                      <div className="ui icon menu right floated" id="childIcons">
+                      <div
+                        className="ui icon menu right floated"
+                        id="childIcons"
+                      >
                         {this.state.isupdated ? (
                           <a
                             id="iconSize"
@@ -235,9 +232,7 @@ pauseOnVisibilityChange
                             {" "}
                             <i className="send icon" />{" "}
                           </a>
-                          
                         )}
-                        
                       </div>
                     </div>
                   </div>
