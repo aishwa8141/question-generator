@@ -26,3 +26,6 @@
 background-color:orange;
 outline: 1px solid slategrey;
 }
+.more{
+  display: none;
+}
