@@ -16,7 +16,8 @@ export default class Cards extends Component {
       value: this.props.questions,
       isupdated: false,
       count:this.creditCount,
-      delete:true
+      delete:false,
+      quesNumber:this.props.num
     };
   }
   componentDidMount(){
@@ -99,7 +100,8 @@ export default class Cards extends Component {
     this.setState({
       value: this.emptyValue,
       update:!this.state.update,
-      delete:true
+      delete:!this.state.delete,
+    quesNumber:this.props.num
     });
     toast.info("Successfully deleted!", {
       position: toast.POSITION.TOP_CENTER,
@@ -126,8 +128,8 @@ closeOnClick={true}
 rtl={false}
 pauseOnVisibilityChange
 
-/>        <div className="ui very padded text container" >
-          <Card fluid style={{"display":(this.state.delete===true ? "block": "none")}} id="card">
+/>      {this.state.delete=== true ? "": ( <div className="ui very padded text container" >
+          <Card fluid  id="card">
             <Card.Content>
               {this.state.isInEditMode === true ? (
                 <div>
@@ -158,7 +160,7 @@ pauseOnVisibilityChange
                 <Fragment>
                   <div className="ui grid">
                     <div className="ten wide column" id="text1">
-                      <Card.Header><span>{this.props.num}</span>.&nbsp; &nbsp; &nbsp;
+                      <Card.Header><span>{this.state.delete === true ? (this.props.num-1):(this.props.num)}</span>.&nbsp; &nbsp; &nbsp;
                         {this.state.update === true
                           ? this.state.value
                           : this.props.questions}
@@ -243,7 +245,7 @@ pauseOnVisibilityChange
               )}
             </Card.Content>
           </Card>
-        </div>
+        </div>)}
       </Fragment>
     );
   }
