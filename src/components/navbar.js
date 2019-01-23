@@ -22,9 +22,7 @@ class Navbar extends React.Component {
     //axios call for credits api to update
   }
 gotoContentList(){
-  this.history.push({
-    pathname:'/contentList'
-  })
+ return <Redirect to="/contentList"></Redirect>
 }
   render() { 
     const trigger = (
