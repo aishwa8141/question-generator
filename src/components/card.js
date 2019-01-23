@@ -3,6 +3,9 @@ import { TextArea, Card } from "semantic-ui-react";
 import "../css/card.css";
 import { Form } from "semantic-ui-react";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default class Cards extends Component {
    creditCount = 0; emptyValue = "";
@@ -21,7 +24,6 @@ export default class Cards extends Component {
     this.creditCount = res.data[0].credit
     })
   }
-
   changeEditMode(event) {
     event.preventDefault();
     this.setState({
@@ -53,6 +55,7 @@ export default class Cards extends Component {
   }
   addCredits = (event) => {
     event.preventDefault();
+  
     console.log("in credits",this.creditCount);
     this.creditCount++;
     this.setState({
@@ -69,18 +72,46 @@ export default class Cards extends Component {
           .then(res => {
             console.log("credit",res);
           });
+           
+    toast.info("Successfully published!", {
+      position: toast.POSITION.TOP_CENTER,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    }
+    );
+
+
   };
   delete = () => {
     this.setState({
       value: this.emptyValue,
     });
+    toast.info("Successfully edited!", {
+      position: toast.POSITION.TOP_CENTER,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    }
+    );
     console.log('delete',this.state.value)
   }
   render() {
     console.log("dad", this.state.value, "the", this.props.questions);
     return (
       <Fragment>
-        <div className="ui very padded text container">
+<ToastContainer
+position="top-right"
+autoClose={2000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick={true}
+rtl={false}
+pauseOnVisibilityChange
+
+/>        <div className="ui very padded text container">
           <Card fluid  id="card">
             <Card.Content>
               {this.state.isInEditMode === true ? (
@@ -186,7 +217,9 @@ export default class Cards extends Component {
                             {" "}
                             <i className="send icon" />{" "}
                           </a>
+                          
                         )}
+                        
                       </div>
                     </div>
                   </div>

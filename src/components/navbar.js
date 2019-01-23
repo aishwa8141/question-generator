@@ -10,13 +10,13 @@ class Navbar extends React.Component {
      signOut: false
    };
  }
- componentDidMount(){
-axios.get(`http://localhost:3002/users`).then(res=>{
- this.setState({
-   credits:res.data[0].credit
- });
+ componentDidUpdate(){
+// axios.get(`http://localhost:3002/users`).then(res=>{
+//  this.setState({
+//    credits:res.data[0].credit
+//  });
 console.log('credit',this.state.credits)
-})
+// })
  }
  handleSignOut = () => {
    console.log("User Signed Out");
@@ -42,12 +42,10 @@ console.log('credit',this.state.credits)
            <Menu.Item>
              <Image
                size="mini"
-               src="https://cdn2.iconfinder.com/data/icons/world-currencies-gold/512/indian_rupee_sign_currency_gold_symbol-512.png
-https://cdn2.iconfinder.com/data/icons/world-currencies-gold/512/indian_rupee_sign_currency_gold_symbol-512.png
-"
+               src="https://cdn2.iconfinder.com/data/icons/world-currencies-gold/512/indian_rupee_sign_currency_gold_symbol-512.png"
                verticalAlign="middle"
              />
-             <span>{this.state.credits == null ? 0 : this.state.credits}</span>
+             {/* <span>{this.state.credits == null ? 0 : this.state.credits}</span> */}
            </Menu.Item>
            <Menu.Item position="right">
              <Dropdown trigger={trigger} pointing="top right" icon={null}>
