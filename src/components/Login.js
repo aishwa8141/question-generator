@@ -12,11 +12,10 @@ import {
 } from "semantic-ui-react";
 import QrReader from "react-qr-scanner";
 import "../css/style.css";
-
+import axios from "axios";
 class Login extends React.Component {
   constructor(props) {
     super(props);
-
     // userService.logout();
     this.state = {
       submitted: false,
@@ -29,27 +28,42 @@ class Login extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleScan = this.handleScan.bind(this);
   }
-
   handleChange(e) {
     console.log(e);
     console.log(e.target);
 
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
+    this.setState({ userid: e.target.value });
   }
   handleSubmit(e) {
     e.preventDefault();
-
-    this.setState({ submitted: true });
-
-    const { userid } = this.state;
+    const userid = this.state.userid;
     if (!userid) {
       return;
     }
-
+    this.setState({ submitted: true });
     this.setState({ loading: true });
+    const request = {
+      code: this.state.userid,
+      roleCode: "TCH1",
+      stallCode: "STA6",
+      ideaCode: "IDE6"
+    };
+    
+    axios
+      .post(`https://dev.ekstep.in/api/devcon/v3/login`, { request })
+      .then(res => {
+        console.log("respomn", res);
+        if(res.data.result.Visitor){
+        this.props.history.push({
+          pathname: "/contentList",
+          state: res.data.result.Visitor
+        });
+      }
+      })
+      
+      .catch(e =>{ console.log("error")
+    return});
 
-    console.log(this.state.userid);
   }
   handleScan(data) {
     if (data) {
@@ -67,7 +81,6 @@ class Login extends React.Component {
   handleError(err) {
     console.error(err);
   }
-
   onSignIn(response) {
     console.log(response);
     sessionStorage.setItem("userid", response.profileObj.name);
@@ -76,20 +89,17 @@ class Login extends React.Component {
       redirect: true
     });
   }
-
   onFailure(response) {
     console.log("Login Failed");
     this.setState({
       redirect: false
     });
   }
-
   render() {
     const previewStyle = {
-      width: '100%',
-      margin: 'auto'
+      width: "100%",
+      margin: "auto"
     };
-
     return (
       <Container fluid>
         <Segment style={{ minHeight: "100vh" }} padded="very">
@@ -115,8 +125,9 @@ class Login extends React.Component {
                     onScan={this.handleScan}
                   />
                   <Divider horizontal>Or</Divider>
-                  <Header as="h3" textAlign='center'>Enter QR Code</Header>
-
+                  <Header as="h3" textAlign="center">
+                    Enter QR Code
+                  </Header>
                   <Form
                     name="loginForm"
                     onSubmit={this.handleSubmit}
@@ -144,5 +155,5 @@ class Login extends React.Component {
     );
   }
 }
-
 export default Login;
+
