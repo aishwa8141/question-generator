@@ -1,158 +1,327 @@
-{
+{ "data":{
   "search": [
     {
-      "id": 1,
+      "id": "cid1",
       "name": "Goldilocks and the Three Bears",
-      "content": "lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
-      "questions": [
+      "content": "In the 16th century, an age of great marine and terrestrial exploration, Ferdinand Magellan led the first expedition to sail around the world. As a young Portuguese noble, he served the king of Portugal, but he became involved in the quagmire of political intrigue at court and lost the king’s favor. After he was dismissed from service by the king of Portugal, he offered to serve the future Emperor Charles V of Spain.A papal decree of 1493 had assigned all land in the New World west of 50 degrees W longitude to Spain and all the land east of that line to Portugal. Magellan offered to prove that the East Indies fell under Spanish authority. On September 20, 1519, Magellan set sail from Spain with five ships. More than a year later, one of these ships was exploring the topography of South America in search of a water route across the continent. This ship sank, but the remaining four ships searched along the southern peninsula of South America. Finally they found the passage they sought near 50 degrees S latitude. Magellan named this passage the Strait of All Saints, but today it is known as the Strait of Magellan.One ship deserted while in this passage and returned to Spain, so fewer sailors were privileged to gaze at that first panorama of the Pacific Ocean. Those who remained crossed the meridian now known as the International Date Line in the early spring of 1521 after 98 days on the Pacific Ocean. During those long days at sea, many of Magellan’s men died of starvation and disease.",
+      "question": [
         {
-          "questionId": 1,
-          "description": "lorem ipsum?"
+         
+          "question": " Four of the ships sought a passage along a southern"
         },
         {
-          "questionId": 2,
-          "description": "lorem ipsum?"
+         
+          "question": "The passage was found near 50 degrees S ?"
         },
         {
-          "questionId": 3,
-          "description": "lorem ipsum?"
+         
+          "question": "In the spring of 1521, the ships crossed the now called the International Date Line?"
+        },
+        {
+         
+          "question": "is magellan lost the favor of the king of Portugal when he became involved in a political ?"
         }
       ]
     },
     {
-      "id": 2,
-      "name": "little Red Riding Hood"
-      ,
-      "content": "lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
-      "questions": [
+      "id": "cid2",
+      "name": "Political education has many connotations.",
+      "content": " It may be defined as the preparation of a citizen to take well informed, responsible and sustained action for participation in the national struggle in order to achieve the socio-economic objectives of the country. The predominant socio- economic objectives in India are the abolition of poverty and the creation of a modern democratic, secular and socialist society in place of the present traditional, feudal, hierarchical and in egalitarian one.Under the colonial rule, the Congress leaders argued that political education was an important part of education and refused to accept the official view that education and politics should not be mixed with one another. But when they came to power in 1947 they almost adopted the British policy and began to talk of education being defiled by politics. ‘Hands off education’ was the call to political parties. But in spite of it, political infiltration into the educational system has greatly increased in the sense that different political parties vie with each other to capture the mind of teachers and students. The wise academicians wanted political support, without political interference. What we have actually received is infinite political interference with little genuine political support. This interference with the educational system by political parties for their own ulterior motives is no political education at all and with the all round growth of elitism, it is hardly a matter for surprise that real political education within the school system (which really means the creation of a commitment to social transformation) has been even weaker than in the pre-independence period During that time only, the struggle for freedom came to an end and the major non- formal agency of political education disappeared. The press played a major role by providing some political education. But it did not utilize the opportunity to the full and the strangle hold of vested interests continued to dominate it. The same can be said of political parties as well as of other institutions and agencies outside the school system which can be expected to provide political education. After analyzing all these things , it appears that we have made no progress in genuine political education in the post-education period and have even slided back in some respects. For instance, the education system has become even more elite-oriented. Patriotism has become the first casualty. The father of the nation gave us the courage to oppose government when it was wrong, in a disciplined fashion and on basic principles. Today, we have even lost the courage to fight on basic issues in a disciplined manner because agitational and anarchic politics for individual, group or party aggrandizement has become common. In the recent times the education system continues to support domination of the privileged groups and domestication of the under- privileged ones. The situation will not change unless we take vigorous steps to provide genuine political education on an adequate scale. This is one of the major educational reforms we need, and if it is not carried out, mere linear expansion of the existing system of formal education will only support the status quo and hamper radical social transformation.",
+      "question": [
         {
-          "questionId": 1,
-          "description": "lorem ipsum?"
+         
+          "question": "Which word is nearly opposite in meaning as “defile” as used in the passage?"
+        },
+        {
+         
+          "question": "How has politics been related to educational institutions after independence?"
+        },
+        {
+         
+          "question": "How has politics been related to educational institutions after independence?"
+        },
+        {
+         
+          "question": "Based on the passage, which is the major drawback of the present education system?"
+        },
+        {
+         
+          "question": "Which is the most opposite in meaning to the word ‘hamper’ as used in the passage?"
         }
       ]
     },
     {
-      "id": 4,
-      "name": "Peter Pan",
-      "content": "lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
-      "questions": [
+      "id": "cid3",
+      "name": "A successful business man",
+      "content": "A fact that draws our attention is that, according to his position in life, an extravagant man is either admired or loathed. A successful business man does nothing to increase his popularity by being prudent with his money. A person who is wealthy is expected to lead a luxurious life and to be lavish with his hospitality. If he is not so, he is considered mean, and his reputation in business may even suffer in consequence. The paradox remains that he had not been careful with his money in the first place; he would never have achieved his present wealth.Among the low income group, a different set of values exists. The young clerk, who makes his wife a present of a new dress when he has not paid his house rent, is condemned as extravagant. Carefulness with money to the point of meanness is applauded as a virtue. Nothing in his life is considered more worthy than paying his bills. The ideal wife for such a man separates her housekeeping money into joyless little piles – so much for rent, for food, for the children’s shoes, she is able to face the milkman with equanimity every, month satisfied with her economizing ways , and never knows the guilt of buying something she can’t really afford .As for myself, I fall neither of these categories. If I have money to spare I can be extravagant, but when, as is usually the case, I am hard up and then I am the meanest man imaginable.",
+      "question": [
         {
-          "questionId": 1,
-          "description": "lorem ipsum?"
+         
+          "question": "According to the passage the person, who is a successful businessman and wealthy?"
         },
         {
-          "questionId": 2,
-          "description": "lorem ipsum?"
+         
+          "question": "The word ‘paradox’ in the last sentence of the first paragraph means?"
         },
         {
-          "questionId": 3,
-          "description": "lorem ipsum?"
+         
+          "question": "What is the meaning of the word “equanimity”?"
         }
       ]
     },
     {
-      "id": 9,
-      "name": "The Bernstein Bears series"
-      ,
-      "content": "lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
-      "questions": [
+      "id": "cid4",
+      "name": "The Bernstein Bears series",
+      "content": "If a person suddenly encounters any terrible danger, the change of nature one undergoes is equally great. Sometimes fear numbs our senses. Like animals, one stands still, powerless to move a step in fright or to lift a hand in defense of our lives, and sometimes one is seized with panic, and again, act more like the inferior animals than rational beings. On the other hand, frequently in cases of sudden extreme peril, which cannot be escaped by flight, and must be instantly faced, even the most timid men at once as if by miracle, become possessed of the necessary courage, sharp quick apprehension and swift decision. This is a miracle very common in nature. Man and the inferior animals alike, when confronted with almost certain death ‘ gather resolution from despair’ but there can really be no trace of so debilitating a feeling in the person fighting, or prepared to fight for dear life. At such times the mind is clearer than it has ever been; the nerves are steel, there is nothing felt but a wonderful strength and daring. Looking back at certain perilous moments in my own life, I remember them with a kind of joy, not that there was any joyful excitement then, but because they broadened my horizon, lifted me for a time above myself.",
+      "question": [
         {
-          "questionId": 1,
-          "description": "lorem ipsum?"
+         
+          "question": "According to the passage, what should be the main purpose of political education?"
         },
         {
-          "questionId": 2,
-          "description": "lorem ipsum?"
+         
+          "question": "What is the meaning of the word “equanimity”?"
         },
         {
-          "questionId": 3,
-          "description": "lorem ipsum?"
+         
+          "question": "The phrase ‘lavish with his hospitality’ in the third sentence of the first paragraph means"
         }
       ]
     },
     {
-      "id": 6,
-      "name": "america",
-      "content": "lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
-      "questions": [
+      "id": "cid5",
+      "name": "Person suddenly encounters any terrible danger",
+      "content": "If a person suddenly encounters any terrible danger, the change of nature one undergoes is equally great. Sometimes fear numbs our senses. Like animals, one stands still, powerless to move a step in fright or to lift a hand in defense of our lives, and sometimes one is seized with panic, and again, act more like the inferior animals than rational beings. On the other hand, frequently in cases of sudden extreme peril, which cannot be escaped by flight, and must be instantly faced, even the most timid men at once as if by miracle, become possessed of the necessary courage, sharp quick apprehension and swift decision. This is a miracle very common in nature. Man and the inferior animals alike, when confronted with almost certain death ‘ gather resolution from despair’ but there can really be no trace of so debilitating a feeling in the person fighting, or prepared to fight for dear life. At such times the mind is clearer than it has ever been; the nerves are steel, there is nothing felt but a wonderful strength and daring. Looking back at certain perilous moments in my own life, I remember them with a kind of joy, not that there was any joyful excitement then, but because they broadened my horizon, lifted me for a time above myself.",
+      "question": [
         {
-          "questionId": 1,
-          "description": "lorem ipsum?"
+         
+          "question": "lorem ipsum?"
         },
         {
-          "questionId": 2,
-          "description": "lorem ipsum?"
+         
+          "question": "lorem ipsum?"
         },
         {
-          "questionId": 3,
-          "description": "lorem ipsum?"
+         
+          "question": "lorem ipsum?"
         }
       ]
     },
     {
-      "id": 7,
-      "name": "indonatio",
-      "content": "lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
-      "questions": [
+      "id": "cid6",
+      "name": "Swami Vivekananda- biography",
+      "content": "Born on Jan 12, 1863 in an affluent Bengali family, Narendra Natha Datta was a precocious child who was what we call nowadays, an all-rounder, excelling in music, studies and athletics. His father Vishwanatha Datta was a well-known attorney. However, he took the spiritual route instead and introduced Hinduism to the world in 1893 when he spoke at the World's Parliament of Religion (probably one of the most epic things any Indian has done abroad!).The historic speech was given on September 11, 1893 by Swami Vivekananda.  Here's the full text of his opening and closing address: Sisters and Brothers of America,It fills my heart with joy unspeakable to rise in response to the warm and cordial welcome which you have given us. I thank you in the name of the most ancient order of monks in the world; I thank you in the name of the mother of religions, and I thank you in the name of millions and millions of Hindu people of all classes and sects.My thanks, also, to some of the speakers on this platform who, referring to the delegates from the Orient, have told you that these men from far-off nations may well claim the honor of bearing to different lands the idea of toleration. I am proud to belong to a religion which has taught the world both tolerance and universal acceptance.We believe not only in universal toleration, but we accept all religions as true. I am proud to belong to a nation which has sheltered the persecuted and the refugees of all religions and all nations of the earth. I am proud to tell you that we have gathered in our bosom the purest remnant of the Israelites, who came to Southern India and took refuge with us in the very year in which their holy temple was shattered to pieces by Roman tyranny. I am proud to belong to the religion which has sheltered and is still fostering the remnant of the grand Zoroastrian nation. I will quote to you, brethren, a few lines from a hymn which I remember to have repeated from my earliest boyhood, which is every day repeated by millions of human beings: As the different streams having their sources in different paths which men take through different tendencies, various though they appear, crooked or straight, all lead to Thee.",
+      "question": [
         {
-          "questionId": 1,
-          "description": "lorem ipsum?"
+         
+          "question": "What was Vishwanatha Datta’s profession"
         },
         {
-          "questionId": 2,
-          "description": "lorem ipsum?"
+         
+          "question": "Who spoke at the World’s Parliament of Religion?"
         },
         {
-          "questionId": 3,
-          "description": "lorem ipsum?"
+         
+          "question": "Give the opposite of the word “Occident” from the second passage of the speech"
+        },
+        {
+         
+          "question": ".In the phrase: “all lead to Thee”, to whom does the word ‘Thee’ refer?"
         }
       ]
     }
+  ,
+    {
+      "id": "cid7",
+      "name": "Although the schooling of fish is familiar form of animal social behaviour",
+      "content": "Born on Jan 12, 1863 in an affluent Bengali family, Narendra Natha Datta was a precocious child who was what we call nowadays, an all-rounder, excelling in music, studies and athletics. His father Vishwanatha Datta was a well-known attorney. However, he took the spiritual route instead and introduced Hinduism to the world in 1893 when he spoke at the World's Parliament of Religion (probably one of the most epic things any Indian has done abroad!).The historic speech was given on September 11, 1893 by Swami Vivekananda.  Here's the full text of his opening and closing address: Sisters and Brothers of America,It fills my heart with joy unspeakable to rise in response to the warm and cordial welcome which you have given us. I thank you in the name of the most ancient order of monks in the world; I thank you in the name of the mother of religions, and I thank you in the name of millions and millions of Hindu people of all classes and sects.My thanks, also, to some of the speakers on this platform who, referring to the delegates from the Orient, have told you that these men from far-off nations may well claim the honor of bearing to different lands the idea of toleration. I am proud to belong to a religion which has taught the world both tolerance and universal acceptance.We believe not only in universal toleration, but we accept all religions as true. I am proud to belong to a nation which has sheltered the persecuted and the refugees of all religions and all nations of the earth. I am proud to tell you that we have gathered in our bosom the purest remnant of the Israelites, who came to Southern India and took refuge with us in the very year in which their holy temple was shattered to pieces by Roman tyranny. I am proud to belong to the religion which has sheltered and is still fostering the remnant of the grand Zoroastrian nation. I will quote to you, brethren, a few lines from a hymn which I remember to have repeated from my earliest boyhood, which is every day repeated by millions of human beings: As the different streams having their sources in different paths which men take through different tendencies, various though they appear, crooked or straight, all lead to Thee.",
+      "question": [
+        {
+         
+          "question": "What was Vishwanatha Datta’s profession"
+        },
+        {
+         
+          "question": "Who spoke at the World’s Parliament of Religion?"
+        },
+        {
+         
+          "question": "Give the opposite of the word “Occident” from the second passage of the speech"
+        },
+        {
+         
+          "question": ".In the phrase: “all lead to Thee”, to whom does the word ‘Thee’ refer?"
+        }
+      ]
+    },
+    {
+      "id": "cid8",
+      "name": "Introduction to Force",
+      "content": "Philosophers in antiquity used the concept of force in the study of stationary and moving objects and simple machines, but thinkers such as Aristotle and Archimedes retained fundamental errors in understanding force. In part this was due to an incomplete understanding of the sometimes non-obvious force of friction, and a consequently inadequate view of the nature of natural motion. A fundamental error was the belief that a force is required to maintain motion, even at a constant velocity. Most of the previous misunderstandings about motion and force were eventually corrected by Galileo Galilei and Sir Isaac Newton. With his mathematical insight, Sir Isaac Newton formulated laws of motion that were not improved-on for nearly three hundred years. By the early 20th century, Einstein developed a theory of relativity that correctly predicted the action of forces on objects with increasing momenta near the speed of light, and also provided insight into the forces produced by gravitation and inertia. With modern insights into quantum mechanics and technology that can accelerate particles close to the speed of light, particle physics has devised a Standard Model to describe forces between particles smaller than atoms. The Standard Model predicts that exchanged particles called gauge bosons are the fundamental means by which forces are emitted and absorbed. Only four main interactions are known: in order of decreasing strength, they are: strong, electromagnetic, weak, and gravitational.:2–10:79 High-energy particle physics observations made during the 1970s and 1980s confirmed that the weak and electromagnetic forces are expressions of a more fundamental electroweak interaction. Aristotle provided a philosophical discussion of the concept of a force as an integral part of Aristotelian cosmology. In Aristotle's view, the terrestrial sphere contained four elements that come to rest at different 'natural places' therein. Aristotle believed that motionless objects on Earth, those composed mostly of the elements earth and water, to be in their natural place on the ground and that they will stay that way if left alone. He distinguished between the innate tendency of objects to find their natural place (e.g., for heavy bodies to fall), which led to natural motion', and unnatural or forced motion, which required continued application of a force. This theory, based on the everyday experience of how objects move, such as the constant application of a force needed to keep a cart moving, had conceptual trouble accounting for the behavior of projectiles, such as the flight of arrows. The place where the archer moves the projectile was at the start of the flight, and while the projectile sailed through the air, no discernible efficient cause acts on it. Aristotle was aware of this problem and proposed that the air displaced through the projectile's path carries the projectile to its target. This explanation demands a continuum like air for change of place in general. The shortcomings of Aristotelian physics would not be fully corrected until the 17th century work of Galileo Galilei, who was influenced by the late Medieval idea that objects in forced motion carried an innate force of impetus. Galileo constructed an experiment in which stones and cannonballs were both rolled down an incline to disprove the Aristotelian theory of motion early in the 17th century. He showed that the bodies were accelerated by gravity to an extent that was independent of their mass and argued that objects retain their velocity unless acted on by a force, for example friction.",
+      "question": [{
+        "question": "What is error?"
+      }, {
+        "question": "What has Einstein increasing?"
+      }, {
+        "question": "What demands Galileo?"
+      }, {
+        "question": "What are the laws of physics of Galileo, in reference to objest in motion and rest?"
+      }, {
+        "question": "Whose First Law of Motion says that unless acted upon be forces, objects would continue to move at a constant velocity?"
+      }, {
+        "question": "The shortcomings of Aristotelian physics would not be corrected until the 16th century work of whom?"
+      }, {
+        "question": "What force acted on bodies to retard their velocity?"
+      }]
+    },
+    {
+      "id": "cid9",
+      "name": "Newton's first law",
+      "content": "Newton's First Law of Motion states that objects continue to move in a state of constant velocity unless acted upon by an external net force or resultant force. This law is an extension of Galileo's insight that constant velocity was associated with a lack of net force (see a more detailed description of this below). Newton proposed that every object with mass has an innate inertia that functions as the fundamental equilibrium natural state in place of the Aristotelian idea of the natural state of rest. That is, the first law contradicts the intuitive Aristotelian belief that a net force is required to keep an object moving with constant velocity. By making rest physically indistinguishable from non-zero constant velocity, Newton's First Law directly connects inertia with the concept of relative velocities. Specifically, in systems where objects are moving with different velocities, it is impossible to determine which object is in motion and which object is at rest. In other words, to phrase matters more technically, the laws of physics are the same in every inertial frame of reference, that is, in all frames related by a Galilean transformation.For instance, while traveling in a moving vehicle at a constant velocity, the laws of physics do not change from being at rest. A person can throw a ball straight up in the air and catch it as it falls down without worrying about applying a force in the direction the vehicle is moving. This is true even though another person who is observing the moving vehicle pass by also observes the ball follow a curving parabolic path in the same direction as the motion of the vehicle. It is the inertia of the ball associated with its constant velocity in the direction of the vehicle's motion that ensures the ball continues to move forward even as it is thrown up and falls back down. From the perspective of the person in the car, the vehicle and everything inside of it is at rest: It is the outside world that is moving with a constant speed in the opposite direction. Since there is no experiment that can distinguish whether it is the vehicle that is at rest or the outside world that is at rest, the two situations are considered to be physically indistinguishable. Inertia therefore applies equally well to constant velocity motion as it does to rest.The concept of inertia can be further generalized to explain the tendency of objects to continue in many different forms of constant motion, even those that are not strictly constant velocity. The rotational inertia of planet Earth is what fixes the constancy of the length of a day and the length of a year. Albert Einstein extended the principle of inertia further when he explained that reference frames subject to constant acceleration, such as those free-falling toward a gravitating object, were physically equivalent to inertial reference frames. This is why, for example, astronauts experience weightlessness when in free-fall orbit around the Earth, and why Newton's Laws of Motion are more easily discernible in such environments. If an astronaut places an object with mass in mid-air next to himself, it will remain stationary with respect to the astronaut due to its inertia. This is the same thing that would occur if the astronaut and the object were in intergalactic space with no net force of gravity acting on their shared reference frame. This principle of equivalence was one of the foundational underpinnings for the development of the general theory of relativity.",
+      "question": [{
+        "question": "What objects Newton?"
+      }, {
+        "question": "What is Galileo?"
+      }, {
+        "question": "What is law moving?"
+      }, {
+        "question": "What connects Newton making?"
+      }, {
+        "question": "What is Galilean traveling?"
+      }, {
+        "question": "What is person observing?"
+      }, {
+        "question": "What does Inertia?"
+      }, {
+        "question": "What is inertia?"
+      }, {
+        "question": "What is Earth?"
+      }, {
+        "question": "What was the basis mentioned for the develpment of the general theory of relativity?"
+      }, {
+        "question": "What makes day length constant on Earth?"
+      }, {
+        "question": "What do astronaughts experience while in free-fall?"
+      }, {
+        "question": "Who explained that reference frames subject to constant deceleration?"
+      }, {
+        "question": "What laws are different in every inertial frame of reference?"
+      }]
+    },
+    {
+      "id": "cid10",
+      "name": "Newton's second law",
+      "content": "Newton's Second Law asserts the direct proportionality of acceleration to force and the inverse proportionality of acceleration to mass. Accelerations can be defined through kinematic measurements. However, while kinematics are well-described through reference frame analysis in advanced physics, there are still deep questions that remain as to what is the proper definition of mass. General relativity offers an equivalence between space-time and mass, but lacking a coherent theory of quantum gravity, it is unclear as to how or whether this connection is relevant on microscales. With some justification, Newton's second law can be taken as a quantitative definition of mass by writing the law as an equality; the relative units of force and mass then are fixed.",
+      "question": [{
+        "question": "What asserts Newton?"
+      }, {
+        "question": "What is reference?"
+      }, {
+        "question": "What offers General lacking?"
+      }, {
+        "question": "What kind of measurements define accelerlations?"
+      }, {
+        "question": "In Newton's second law, what are the units of mass and force in relation to microscales?"
+      }]
+
+    },
+    {
+      "id": "cid4",
+      "name": "Newton's third law",
+      "content": "Newton's Third Law is a result of applying symmetry to situations where forces can be attributed to the presence of different objects. The third law means that all forces are interactions between different bodies,[Note 3] and thus that there is no such thing as a unidirectional force or a force that acts on only one body. Whenever a first body exerts a force F on a second body, the second body exerts a force −F on the first body. F and −F are equal in magnitude and opposite in direction. This law is sometimes referred to as the action-reaction law, with F called the action and −F the reaction. The action and the reaction are simultaneous: This means that in a closed system of particles, there are no internal forces that are unbalanced. That is, the action-reaction force shared between any two objects in a closed system will not cause the center of mass of the system to accelerate. The constituent objects only accelerate with respect to each other, the system itself remains unaccelerated. Alternatively, if an external force acts on the system, then the center of mass will experience an acceleration proportional to the magnitude of the external force divided by the mass of the system.:19-1. Since forces are perceived as pushes or pulls, this can provide an intuitive understanding for describing forces. As with other physical concepts (e.g. temperature), the intuitive understanding of forces is quantified using precise operational definitions that are consistent with direct observations and compared to a standard measurement scale. Through experimentation, it is determined that laboratory measurements of forces are fully consistent with the conceptual definition of force offered by Newtonian mechanics.",
+      "question": [{
+        "question": "What is Newton applying?"
+      }, {
+        "question": "What means 3?"
+      }, {
+        "question": "What exerts F?"
+      }, {
+        "question": "What is F?"
+      }, {
+        "question": "What means action?"
+      }, {
+        "question": "What is action-reaction?"
+      }, {
+        "question": "What is temperature using?"
+      }, {
+        "question": "When forces are from the presence of differnet objects, what law gives symmetry?"
+      }, {
+        "question": "What kind of force does not exist under Newton's third law?"
+      }]
+
+    },
+    {
+      "id": "cid11",
+      "name": "Types of forces",
+      "content": "Forces act in a particular direction and have sizes dependent upon how strong the push or pull is. Because of these characteristics, forces are classified as 'vector quantities'. This means that forces follow a different set of mathematical rules than physical quantities that do not have direction (denoted scalar quantities). For example, when determining what happens when two forces act on the same object, it is necessary to know both the magnitude and the direction of both forces to calculate the result. If both of these pieces of information are not known for each force, the situation is ambiguous. For example, if you know that two people are pulling on the same rope with known magnitudes of force but you do not know which direction either person is pulling, it is impossible to determine what the acceleration of the rope will be. The two people could be pulling against each other as in tug of war or the two people could be pulling in the same direction. In this simple one-dimensional example, without knowing the direction of the forces it is impossible to decide whether the net force is the result of adding the two force magnitudes or subtracting one from the other. Associating forces with vectors avoids such problems.Historically, forces were first quantitatively investigated in conditions of static equilibrium where several forces canceled each other out. Such experiments demonstrate the crucial properties that forces are additive vector quantities: they have magnitude and direction. When two forces act on a point particle, the resulting force, the resultant (also called the net force), can be determined by following the parallelogram rule of vector addition: the addition of two vectors represented by sides of a parallelogram, gives an equivalent resultant vector that is equal in magnitude and direction to the transversal of the parallelogram. The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum, depending on the angle between their lines of action. However, if the forces are acting on an extended body, their respective lines of application must also be specified in order to account for their effects on the motion of the body.As well as being added, forces can also be resolved into independent components at right angles to each other. A horizontal force pointing northeast can therefore be split into two forces, one pointing north, and one pointing east. Summing these component forces using vector addition yields the original force. Resolving force vectors into components of a set of basis vectors is often a more mathematically clean way to describe forces than using magnitudes and directions. This is because, for orthogonal components, the components of the vector sum are uniquely determined by the scalar addition of the components of the individual vectors. Orthogonal components are independent of each other because forces acting at ninety degrees to each other have no effect on the magnitude or direction of the other. Choosing a set of orthogonal basis vectors is often done by considering what set of basis vectors will make the mathematics most convenient. Choosing a basis vector that is in the same direction as one of the forces is desirable, since that force would then have only one non-zero component. Orthogonal force vectors can be three-dimensional with the third component being at right-angles to the other two.Pushing against an object on a frictional surface can result in a situation where the object does not move because the applied force is opposed by static friction, generated between the object and the table surface. For a situation with no movement, the static friction force exactly balances the applied force resulting in no acceleration. The static friction increases or decreases in response to the applied force up to an upper limit determined by the characteristics of the contact between the surface and the object.A static equilibrium between two forces is the most usual way of measuring forces, using simple devices such as weighing scales and spring balances. For example, an object suspended on a vertical spring scale experiences the force of gravity acting on the object balanced by a force applied by the spring reaction force, which equals the object's weight. Using such tools, some quantitative force laws were discovered: that the force of gravity is proportional to volume for objects of constant density (widely exploited for millennia to define standard weights); Archimedes' principle for buoyancy; Archimedes' analysis of the lever; Boyle's law for gas pressure; and Hooke's law for springs. These were all formulated and experimentally verified before Isaac Newton expounded his Three Laws of Motion.Dynamic equilibrium was first described by Galileo who noticed that certain assumptions of Aristotelian physics were contradicted by observations and logic. Galileo realized that simple velocity addition demands that the concept of an absolute rest frame did not exist. Galileo concluded that motion in a constant velocity was completely equivalent to rest. This was contrary to Aristotle's notion of a natural state of rest that objects with mass naturally approached. Simple experiments showed that Galileo's understanding of the equivalence of constant velocity and rest were correct. For example, if a mariner dropped a cannonball from the crow's nest of a ship moving at a constant velocity, Aristotelian physics would have the cannonball fall straight down while the ship moved beneath it. Thus, in an Aristotelian universe, the falling cannonball would land behind the foot of the mast of a moving ship. However, when this experiment is actually conducted, the cannonball always falls at the foot of the mast, as if the cannonball knows to travel with the ship despite being separated from it. Since there is no forward horizontal force being applied on the cannonball as it falls, the only conclusion left is that the cannonball continues to move with the same velocity as the boat as it falls. Thus, no force is required to keep the cannonball moving at the constant forward velocity.A simple case of dynamic equilibrium occurs in constant velocity motion across a surface with kinetic friction. In such a situation, a force is applied in the direction of motion while the kinetic friction force exactly opposes the applied force. This results in zero net force, but since the object started with a non-zero velocity, it continues to move with a non-zero velocity. Aristotle misinterpreted this motion as being caused by the applied force. However, when kinetic friction is taken into consideration it is clear that there is no net force causing constant velocity motion.The notion force keeps its meaning in quantum mechanics, though one is now dealing with operators instead of classical variables and though the physics is now described by the Schrödinger equation instead of Newtonian equations. This has the consequence that the results of a measurement are now sometimes quantized, i.e. they appear in discrete portions. This is, of course, difficult to imagine in the context of forces. However, the potentials V(x,y,z) or fields, from which the forces generally can be derived, are treated similar to classical position variables, i.e., .However, already in quantum mechanics there is one caveat, namely the particles acting onto each other do not only possess the spatial variable, but also a discrete intrinsic angular momentum-like variable called the spin, and there is the Pauli principle relating the space and the spin variables. Depending on the value of the spin, identical particles split into two different classes, fermions and bosons. If two identical fermions (e.g. electrons) have a symmetric spin function (e.g. parallel spins) the spatial variables must be antisymmetric (i.e. they exclude each other from their places much as if there was a repulsive force), and vice versa, i.e. for antiparallel spins the position variables must be symmetric (i.e. the apparent force must be attractive). Thus in the case of two fermions there is a strictly negative correlation between spatial and spin variables, whereas for two bosons (e.g. quanta of electromagnetic waves, photons) the correlation is strictly positive.In modern particle physics, forces and the acceleration of particles are explained as a mathematical by-product of exchange of momentum-carrying gauge bosons. With the development of quantum field theory and general relativity, it was realized that force is a redundant concept arising from conservation of momentum (4-momentum in relativity and momentum of virtual particles in quantum electrodynamics). The conservation of momentum can be directly derived from the homogeneity or symmetry of space and so is usually considered more fundamental than the concept of a force. Thus the currently known fundamental forces are considered more accurately to be fundamental interactions:199–128 When particle A emits (creates) or absorbs (annihilates) virtual particle B, a momentum conservation results in recoil of particle A making impression of repulsion or attraction between particles A A' exchanging by B. This description applies to all forces arising from fundamental interactions. While sophisticated mathematical descriptions are needed to predict, in full detail, the accurate result of such interactions, there is a conceptually simple way to describe such interactions through the use of Feynman diagrams. In a Feynman diagram, each matter particle is represented as a straight line (see world line) traveling through time, which normally increases up or to the right in the diagram. Matter and anti-matter particles are identical except for their direction of propagation through the Feynman diagram. World lines of particles intersect at interaction vertices, and the Feynman diagram represents any force arising from an interaction as occurring at the vertex with an associated instantaneous change in the direction of the particle world lines. Gauge bosons are emitted away from the vertex as wavy lines and, in the case of virtual particle exchange, are absorbed at an adjacent vertex.All of the forces in the universe are based on four fundamental interactions. The strong and weak forces are nuclear forces that act only at very short distances, and are responsible for the interactions between subatomic particles, including nucleons and compound nuclei. The electromagnetic force acts between electric charges, and the gravitational force acts between masses. All other forces in nature derive from these four fundamental interactions. For example, friction is a manifestation of the electromagnetic force acting between the atoms of two surfaces, and the Pauli exclusion principle, which does not permit atoms to pass through each other. Similarly, the forces in springs, modeled by Hooke's law, are the result of electromagnetic forces and the Exclusion Principle acting together to return an object to its equilibrium position. Centrifugal forces are acceleration forces that arise simply from the acceleration of rotating frames of reference. The development of fundamental theories for forces proceeded along the lines of unification of disparate ideas. For example, Isaac Newton unified the force responsible for objects falling at the surface of the Earth with the force responsible for the orbits of celestial mechanics in his universal theory of gravitation. Michael Faraday and James Clerk Maxwell demonstrated that electric and magnetic forces were unified through one consistent theory of electromagnetism. In the 20th century, the development of quantum mechanics led to a modern understanding that the first three fundamental forces (all except gravity) are manifestations of matter (fermions) interacting by exchanging virtual particles called gauge bosons. This standard model of particle physics posits a similarity between the forces and led scientists to predict the unification of the weak and electromagnetic forces in electroweak theory subsequently confirmed by observation. The complete formulation of the standard model predicts an as yet unobserved Higgs mechanism, but observations such as neutrino oscillations indicate that the standard model is incomplete. A Grand Unified Theory allowing for the combination of the electroweak interaction with the strong force is held out as a possibility with candidate theories such as supersymmetry proposed to accommodate some of the outstanding unsolved problems in physics. Physicists are still attempting to develop self-consistent unification models that would combine all four fundamental interactions into a theory of everything. Einstein tried and failed at this endeavor, but currently the most popular approach to answering this question is string theory.What we now call gravity was not identified as a universal force until the work of Isaac Newton. Before Newton, the tendency for objects to fall towards the Earth was not understood to be related to the motions of celestial objects. Galileo was instrumental in describing the characteristics of falling objects by determining that the acceleration of every object in free-fall was constant and independent of the mass of the object. Today, this acceleration due to gravity towards the surface of the Earth is usually designated as  and has a magnitude of about 9.81 meters per second squared (this measurement is taken from sea level and may vary depending on location), and points toward the center of the Earth. This observation means that the force of gravity on an object at the Earth's surface is directly proportional to the object's mass. Thus an object that has a mass of  will experience a force:Newton came to realize that the effects of gravity might be observed in different ways at larger distances. In particular, Newton determined that the acceleration of the Moon around the Earth could be ascribed to the same force of gravity if the acceleration due to gravity decreased as an inverse square law. Further, Newton realized that the acceleration due to gravity is proportional to the mass of the attracting body. Combining these ideas gives a formula that relates the mass () and the radius () of the Earth to the gravitational acceleration:In this equation, a dimensional constant  is used to describe the relative strength of gravity. This constant has come to be known as Newton's Universal Gravitation Constant, though its value was unknown in Newton's lifetime. Not until 1798 was Henry Cavendish able to make the first measurement of  using a torsion balance; this was widely reported in the press as a measurement of the mass of the Earth since knowing  could allow one to solve for the Earth's mass given the above equation. Newton, however, realized that since all celestial bodies followed the same laws of motion, his law of gravity had to be universal. Succinctly stated, Newton's Law of Gravitation states that the force on a spherical object of mass  due to the gravitational pull of mass  is It was only the orbit of the planet Mercury that Newton's Law of Gravitation seemed not to fully explain. Some astrophysicists predicted the existence of another planet (Vulcan) that would explain the discrepancies; however, despite some early indications, no such planet could be found. When Albert Einstein formulated his theory of general relativity (GR) he turned his attention to the problem of Mercury's orbit and found that his theory added a correction, which could account for the discrepancy. This was the first time that Newton's Theory of Gravity had been shown to be less correct than an alternative. Since then, and so far, general relativity has been acknowledged as the theory that best explains gravity. In GR, gravitation is not viewed as a force, but rather, objects moving freely in gravitational fields travel under their own inertia in straight lines through curved space-time – defined as the shortest space-time path between two space-time events. From the perspective of the object, all motion occurs as if there were no gravitation whatsoever. It is only when observing the motion in a global sense that the curvature of space-time can be observed and the force is inferred from the object's curved path. Thus, the straight line path in space-time is seen as a curved line in space, and it is called the ballistic trajectory of the object. For example, a basketball thrown from the ground moves in a parabola, as it is in a uniform gravitational field. Its space-time trajectory (when the extra ct dimension is added) is almost a straight line, slightly curved (with the radius of curvature of the order of few light-years). The time derivative of the changing momentum of the object is what we label as gravitational force.",
+      "question": [{
+        "question": "What means set?"
+      }, {
+        "question": "What does pushing and pulling perceptions provide for describing forces?"
+      }, {
+        "question": "What happens it determining?"
+      }, {
+        "question": "What is information?"
+      }, {
+        "question": "What gives point resulting?"
+      }, {
+        "question": "What is force Resolving?"
+      }, {
+        "question": "What is vector?"
+      }, {
+        "question": "What is set Choosing?"
+      }, {
+        "question": "What does Orthogonal being?"
+      }, {
+        "question": "What is friction measuring?"
+      }, {
+        "question": "What predicts Higgs?"
+      }, {
+        "question": "What is Einstein answering?"
+      }, {
+        "question": "What is Earth depending?"
+      }, {
+        "question": "What means Earth?"
+      }, {
+        "question": "What has Newton?"
+      }, {
+        "question": "What is Newton attracting?"
+      }, {
+        "question": "What gives Earth Combining?"
+      }, {
+        "question": "What has Newton?"
+      }, {
+        "question": "What is Newton?"
+      }, {
+        "question": "What has relativity?"
+      }, {
+        "question": "What is GR moving?"
+      }, {
+        "question": "What occurs perspective?"
+      }, {
+        "question": "What is It observing?"
+      }, {
+        "question": "What is trajectory?"
+      }, {
+        "question": "What is we changing?"
+      }]
+
+    }
   ],
+  
   "users": [
     {
       "id": 1,
       "name": "aishwarya",
-      "password": "kamal",
-      "profile": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs7lyT-Fmck2gmQfG512xRZcmwxxboqm8lCBEexVg_merN-QENDw"
+      "credits": 2,
+      "userName": "aish",
+      "coins": 1
     },
     {
-      "name": "kamal",
-      "password": "dnfd",
-      "profile": "nds",
-      "id": 4
-    },
-    {
-      "name": "ksd",
-      "password": "snd",
-      "profile": "ksndlks",
-      "id": 5
-    },
-    {
-      "name": "knd;",
-      "password": "sd;s",
-      "profile": "sdnlksnd",
-      "id": 6
-    },
-    {
-      "name": "kamalee",
-      "password": "kaml",
-      "profile": "data:image/jpeg;base64,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",
-      "id": 7
-    },
-    {
-      "name": "kasfd",
-      "password": "ksndlsnlkd",
-      "profile": "data:image/jpeg;base64,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",
-      "id": 8
-    },
-    {
-      "name": "asa",
-      "password": "sd",
-      "id": 9
-    },
-    {
-      "id": 10
+      "name": "aish",
+      "credits": 1,
+      "id": 2
     }
   ]
+}
 }

@@ -1,96 +1,48 @@
 import React, { Component, Fragment } from "react";
 import Cards from "./card";
 import Navbar from "./navbar";
-import '../css/createContent.css';  
+import "../css/createContent.css";
+var num = 1;
 export default class Content extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      textareaValue: "",
-      textareaLength: "",
-      storyName: "",
-      enablebutton: true,
-      questions: []
+      questions: [],
+      descript: this.props.location.state.description
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  componentDidMount() {
+    this.displayQuestion();
   }
   displayQuestion = () => {
     this.setState({
-      questions: [
-        { id: "fdsd", title: "Why is the sky blue?" },
-        { id: "adsf", title: "Who invented pizza?" },
-        { id: "afdsf", title: "Is green tea overrated?" }
-      ]
+      questions: this.state.descript.question
     });
-    console.log(this.state.questions);
   };
-  handleOnChangeInput(e) {
-    e.preventDefault();
-    if (e.target.type === "text") {
-      console.log("hi");
-      this.setState({
-        storyName: e.target.value
-      });
-    } else {
-      this.setState({
-        textareaValue: e.target.value,
-        textareaLength: e.target.value.length
-      });
-      if (this.state.textareaLength >= 10) {
-        this.setState({ enablebutton: false });
-      }
-    }
-  }
-  handleSubmit(event) {
-    console.log("shajhdk");
-    alert("An essay was submitted: " + this.state.storyName);
-    event.preventDefault();
-  }
 
   render() {
     return (
       <Fragment>
-        <Navbar/>
+        <Navbar />
         <div className="ui centered align grid" id="align">
-          <h2>Generated Contents and Questions </h2>
+          {/* <h2>Generated Contents and Questions </h2> */}
         </div>
-        <div className="ui raised very padded text container segment" id="align">
-          <h2 className="ui header">Dogs Roles with Humans </h2>
-          <p>
-            Domestic dogs inherited complex behaviors, such as bite inhibition,
-            from their wolf ancestors, which would have been pack hunters with
-            complex body language. These sophisticated forms of social cognition
-            and communication may account for their trainability, playfulness,
-            and ability to fit into human households and social situations, and
-            these attributes have given dogs a relationship with humans that has
-            enabled them to become one of the most successful species on the
-            planet today.
-          </p>
-          <p>
-            The dogs' value to early human hunter-gatherers led to them quickly
-            becoming ubiquitous across world cultures. Dogs perform many roles
-            for people, such as hunting, herding, pulling loads, protection,
-            assisting police and military, companionship, and, more recently,
-            aiding handicapped individuals. This impact on human society has
-            given them the nickname "man's best friend" in the Western world. In
-            some cultures, however, dogs are also a source of meat.
-          </p>
-
-          <button
-            className="ui primary button right floated"
-            onClick={this.displayQuestion}
-          >
-            Generate questions
-          </button>
+        <div
+          className="ui raised very padded text container segment "
+          id="para"
+        >
+          <h2 className="ui header centered align">{this.state.descript.name}</h2>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.state.descript.content}</p>
+          {/* <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.state.descript.content}</p> */}
         </div>
 
         <div>
-          {/* <div className="ui centered align grid">
-          <h3>Generated Questions<Icon name="question"></Icon></h3>
-          </div> */}
-          {this.state.questions.map(data => (
-            <Cards questions={data.title} />
-          ))}
+          <div id="ques">
+            {this.state.questions.map((data ,i)=> (
+              
+              <Cards key={i} questions={data.question} num={num++} />
+            ))}
+          </div>
         </div>
       </Fragment>
     );

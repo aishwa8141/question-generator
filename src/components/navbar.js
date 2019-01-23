@@ -1,11 +1,13 @@
 import React from "react";
 import { Image, Menu, Dropdown, Icon } from "semantic-ui-react";
 import { Redirect } from "react-router";
+import axios from "axios";
 
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      results:'',
       credits: 0,
       signOut: false
     };
@@ -17,7 +19,19 @@ class Navbar extends React.Component {
       signOut: true
     });
   };
-
+componentDidMount(){
+  axios
+  .get(`http://localhost:3002/data`)
+  .then(res => {
+    console.log("searcgj", res);
+    this.setState({
+     credits: res.data.users[0].credits
+    });
+  })
+  .catch(err => {
+    console.log("Error retreiving Info");
+  });
+}
   render() {
     const trigger = (
       <span>
@@ -37,7 +51,7 @@ class Navbar extends React.Component {
                 src="https://cdn2.iconfinder.com/data/icons/world-currencies-gold/512/indian_rupee_sign_currency_gold_symbol-512.png"
                 verticalAlign="middle"
               />
-              <span>{this.props.credits == null ? 0 : this.props.credits}</span>
+              <span>{this.props.credits == null ? this.state.credits : this.props.credits}</span>
             </Menu.Item>
             <Menu.Item position="right">
               <Dropdown trigger={trigger} pointing="top right" icon={null}>

@@ -31,7 +31,8 @@
   }
 }
 
-#card {
+
+/* #card {
   width: auto;
  
 }
@@ -40,9 +41,9 @@
   border: 0px;
   box-shadow: none;
   border-radius: 0px;
-}
+} */
 
-#iconrupee {
+/* #iconrupee {
   font-size: 60px;
   color: gold;
 }
@@ -57,4 +58,4 @@
 #text {
   text-align: -webkit-auto;
   margin-top: 2rem;
-}
+} */

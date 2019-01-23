@@ -1,5 +1,9 @@
 #text1 {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
+  padding-left: 3rem
+}
+#text2 {
+    padding-right: 3rem
 }
 #style {
   margin-left: 0.5rem;
@@ -8,7 +12,10 @@
     margin-top: 2rem;
 }
 #header{
-    font-size: inherit;
+    /* font-size: inherit; */
+}
+#align {
+    margin-bottom: 1rem;
 }
 #childIcons {
     margin-bottom: 0;
@@ -18,4 +25,21 @@
     #iconSize{
         padding: 0.928571em 0.42857em; 
     }
+}
+
+#card {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    border-bottom-color: black;
+    color: rgb(85, 85, 81)
+}
+#ques {
+    margin-bottom: 1rem;
+}
+#align h2 {
+    margin-bottom: 2rem
+}
+
+form{
+    padding-bottom: 1rem
 }

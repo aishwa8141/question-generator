@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from "react";
-import { Card } from "semantic-ui-react";
 import "../css/card.css";
 import axios from "axios";
 import Navbar from "./navbar";
-
+import TitleCards from './titleCard';
+var num=1;
 const contentIndex = [];
 export class QuestionPage extends Component {
     constructor(props) {
@@ -14,11 +14,11 @@ export class QuestionPage extends Component {
       }
       componentDidMount() {
         axios
-          .get(`http://localhost:3002/search`)
+          .get(`http://localhost:3002/data`)
           .then(res => {
-            console.log("searcgj", res);
+            console.log("searcgj", res.data.search);
             this.setState({
-              results: res.data
+              results: res.data.search
             });
           })
           .catch(err => {
@@ -26,15 +26,15 @@ export class QuestionPage extends Component {
           });
      
         while (contentIndex.length < 5) {
-          var r = Math.floor(Math.random() * 5) + 1;
+          var r = Math.floor(Math.random() * 11) + 1;
           if (contentIndex.indexOf(r) === -1) contentIndex.push(r);
         }
         console.log(contentIndex);
       }
-    gotoContent = () => {
+    gotoContent = (index) => {
         console.log('content')
         this.props.history.push({
-            pathname:'/content'
+            pathname:'/content', 
 
         });
     }
@@ -42,27 +42,21 @@ export class QuestionPage extends Component {
     return (
       <Fragment>
         <Navbar />
-        <div className="ui container">
+        {/* <div className="ui container"> */}
           <div
-            className="ui raised very padded text container segment"
+            className="ui raised very padded container segment"
             id="align"
           >
             <h2 className="ui centered align grid">Questionnaries</h2>
-            {contentIndex.map(index => (
-            <Card fluid color="red" id="cardDesign" onClick={this.gotoContent}>
-              <Card.Content>
-                {/* <div className="ui grid">
-                <div className="twelve wide ">*/}
-                <Card.Header id="header">{this.state.results[index].name} </Card.Header>
-
-                <div className="meta right floated">{this.state.results[index].questions.length}</div>
-              </Card.Content>
-            </Card>
+            {contentIndex.map((index , i) => (
+         
+            <TitleCards key={i} content={this.state.results[index]} num={num++}></TitleCards>
+            
             ))
             }
           </div>
-        </div>
+        {/* </div> */}
       </Fragment>
     );
   }
-}
+}   
