@@ -1,7 +1,6 @@
 import React, { Fragment, Component } from "react";
 import {
-  Header,
-  Segment,
+
   Card,
   Container
 } from "semantic-ui-react";
@@ -11,8 +10,9 @@ import Navbar from "./navbar";
 import * as content from "./contentData";
 
 export default class Content extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
+		
 		this.randomList = Array();
 		while(this.randomList.length <5) {
 			var num = Math.floor(Math.random()*20)
@@ -30,18 +30,14 @@ export default class Content extends Component {
       }
 	contentList = () => {
 		
-		return this.items.map(( item , i)=> 
-			<Fragment  key={i}>
-				<div className="ui grid">
-				<div className="fourteen wide column">
-			<Card fluid header={item.name} meta={ item.question.length +" Questions"} description={item.shortDescription} onClick={this.gotoContent.bind(this,item)}	></Card>
-			</div>
-			<div className="two wide column  centered">
-			<Card  meta={ item.question.length +" Questions"} ></Card>
-			</div>
-			</div>
-			</Fragment>
-			)
+		return this.items.map( (item,i) => 
+		<Fragment  key={i}>
+			
+			<a className="ui orange right ribbon label align centered">{ item.question.length}&nbsp;Questions</a>
+			<Card key={i}fluid header={item.name}  description={item.shortDescription} onClick={this.gotoContent.bind(this,item)}	></Card>
+			
+		   </Fragment>
+	)
 	}
 
 	render() {

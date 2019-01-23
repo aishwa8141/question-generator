@@ -3,8 +3,8 @@ import { TextArea, Card } from "semantic-ui-react";
 import "../css/card.css";
 import { Form } from "semantic-ui-react";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { css } from "glamor";
 
 export default class Cards extends Component {
@@ -16,13 +16,15 @@ export default class Cards extends Component {
       isInEditMode: false,
       value: this.props.questions,
       isupdated: false,
-      count: this.creditCount
+      count:this.creditCount,
+      delete:false,
+      quesNumber:this.props.num
     };
   }
   componentDidMount() {
-    axios.get("http://localhost:3002/users").then(res => {
-      this.creditCount = res.data[0].credit;
-    });
+    // axios.get("http://localhost:3002/users").then(res => {
+    //   this.creditCount = res.data[0].credit;
+    // });
   }
   changeEditMode(event) {
     event.preventDefault();
@@ -39,11 +41,10 @@ export default class Cards extends Component {
     toast.info("Successfully edited!", {
       position: toast.POSITION.TOP_CENTER,
       className: css({
-        background: "grey",
+        background: "orange",
         width: "400px",
         borderRadius: "10px",
-        opacity: "0.05",
-        marginTop: '4rem'
+        opacity: "0.2"
       }),
       bodyClassName: css({})
     });
@@ -58,7 +59,7 @@ export default class Cards extends Component {
     event.preventDefault();
     this.setState({
       value: this.props.questions,
-      isInEditMode: false
+      isInEditMode: true
     });
   }
   addCredits = event => {
@@ -69,52 +70,60 @@ export default class Cards extends Component {
       isupdated: true,
       count: this.creditCount
     });
-    const newCredit = {
-      id: 1,
-      name: "aishwarya",
-      credit: this.creditCount
-    };
-    axios
-      .put(`http://localhost:3002/users/${newCredit.id}`, newCredit)
-      .then(res => {
-      });
+    const newCredit={
+      id:1,
+      name:"aishwarya",
+      credit:this.creditCount
+    }
+    // axios.put(`http://localhost:3002/users/${newCredit.id}`,newCredit)
+    //       .then(res => {
+    //         console.log("credit",res);
+    //       });
+          toast.info("Successfully published!", {
+            position: toast.POSITION.TOP_CENTER,
+            className: css({
+              background: "green",
+              width: "400px",
+              borderRadius: "10px",
+              opacity: "0.2"
+            }),
+            bodyClassName: css({})
+          });
 
-    toast.info("Successfully published!", {
-      autoClose: true,
-      position: toast.POSITION.TOP_CENTER,
-      className: css({
-        background: "#6A9377",
-        width: "400px",
-        height: "10px",
-        borderRadius: "10px",
-        opacity: "0.05",
-        border: "none",
-        marginTop: '4rem'
-      })
-    });
   };
   delete = () => {
     this.setState({
-      value: this.emptyValue
+      value: this.emptyValue,
+      update:!this.state.update,
+      delete:!this.state.delete,
+    quesNumber:this.props.num
     });
     toast.info("Successfully deleted!", {
       position: toast.POSITION.TOP_CENTER,
       className: css({
-        background: "#AF7E7E",
+        background: "red",
         width: "400px",
         borderRadius: "10px",
-        opacity: "0.05",
-        marginTop: '4rem'
+        opacity: "0.1"
       }),
       bodyClassName: css({})
     });
-  };
+    console.log('delete',this.state.value)
+  }
   render() {
     return (
       <Fragment>
-        <div className="ui very padded text container">
-          <ToastContainer autoClose={2000} />
-          <Card fluid id="card">
+<ToastContainer
+position="top-right"
+autoClose={2000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick={true}
+rtl={false}
+pauseOnVisibilityChange
+
+/>      {this.state.delete=== true ? "": ( <div className="ui very padded text container" >
+          <Card fluid  id="card">
             <Card.Content>
               {this.state.isInEditMode === true ? (
                 <div>
@@ -146,7 +155,6 @@ export default class Cards extends Component {
                   <div className="ui grid">
                     <div className="ten wide column" id="text1">
                       <Card.Header>
-                        <span>{this.props.num}</span>.&nbsp; &nbsp; &nbsp;
                         {this.state.update === true
                           ? this.state.value
                           : this.props.questions}
@@ -161,7 +169,7 @@ export default class Cards extends Component {
                           <a
                             id="iconSize"
                             className="item"
-                            href="/"
+                            // href="/"
                             data-tooltip="It's published"
                             data-position="bottom left"
                           >
@@ -171,7 +179,7 @@ export default class Cards extends Component {
                           <a
                             id="iconSize"
                             className="item"
-                            // href="/"
+                            // href="/contentPage"
                             data-tooltip="delete"
                             data-position="bottom left"
                             onClick={this.delete}
@@ -183,7 +191,7 @@ export default class Cards extends Component {
                           <a
                             id="iconSize"
                             className="item"
-                            href="/"
+                            // href="/"
                             data-tooltip="It's published"
                             data-position="bottom left"
                           >
@@ -193,7 +201,7 @@ export default class Cards extends Component {
                           <a
                             id="iconSize"
                             className="item"
-                            href="/"
+                            //  href="/contentPage"
                             data-tooltip="edit"
                             data-position="bottom left"
                             onClick={this.changeEditMode.bind(this)}
@@ -205,7 +213,7 @@ export default class Cards extends Component {
                         {this.state.isupdated ? (
                           <a
                             className="item"
-                            href="/content"
+                            // href="/content"
                             id="iconSize"
                             data-tooltip="It's published"
                             data-position="bottom left"
@@ -216,7 +224,7 @@ export default class Cards extends Component {
                           <a
                             className="item"
                             id="iconSize"
-                            href="/"
+                            // href="/contentPage"
                             data-tooltip="publish"
                             data-position="bottom left"
                             onClick={this.addCredits}
@@ -232,7 +240,7 @@ export default class Cards extends Component {
               )}
             </Card.Content>
           </Card>
-        </div>
+        </div>)}
       </Fragment>
     );
   }

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import Cards from "./card";
 import Navbar from "./navbar";
 import "../css/createContent.css";
-import { Container, Button } from "semantic-ui-react";
+import {  Button } from "semantic-ui-react";
 
 export default class Content extends Component {
  number = 1;
@@ -12,11 +12,12 @@ export default class Content extends Component {
      questions: [],
      num :this.number,
      descript: this.props.location.state.description,
-     expanded: false
-   };
+     expanded: false,
+      };
  }
  componentDidMount() {
    this.displayQuestion();
+
  }
  displayQuestion = () => {
    this.setState({
@@ -29,7 +30,7 @@ export default class Content extends Component {
  render() {
    return (
      <Fragment>
-       <Navbar />
+       <Navbar></Navbar>
        <div className="ui centered align grid" id="align">
          {/* <h2>Generated Contents and Questions </h2> */}
        </div>

@@ -13,11 +13,9 @@ import {
 import QrReader from "react-qr-scanner";
 import "../css/style.css";
 import axios from "axios";
-
 class Login extends React.Component {
   constructor(props) {
     super(props);
-
     // userService.logout();
     this.state = {
       submitted: false,
@@ -30,7 +28,6 @@ class Login extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleScan = this.handleScan.bind(this);
   }
-
   handleChange(e) {
     console.log(e);
     console.log(e.target);
@@ -84,7 +81,6 @@ class Login extends React.Component {
   handleError(err) {
     console.error(err);
   }
-
   onSignIn(response) {
     console.log(response);
     sessionStorage.setItem("userid", response.profileObj.name);
@@ -93,20 +89,17 @@ class Login extends React.Component {
       redirect: true
     });
   }
-
   onFailure(response) {
     console.log("Login Failed");
     this.setState({
       redirect: false
     });
   }
-
   render() {
     const previewStyle = {
       width: "100%",
       margin: "auto"
     };
-
     return (
       <Container fluid>
         <Segment style={{ minHeight: "100vh" }} padded="very">
@@ -135,7 +128,6 @@ class Login extends React.Component {
                   <Header as="h3" textAlign="center">
                     Enter QR Code
                   </Header>
-
                   <Form
                     name="loginForm"
                     onSubmit={this.handleSubmit}
@@ -163,5 +155,5 @@ class Login extends React.Component {
     );
   }
 }
-
 export default Login;
+
