@@ -3,40 +3,49 @@ import { TextArea, Card } from "semantic-ui-react";
 import "../css/card.css";
 import { Form } from "semantic-ui-react";
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { css } from "glamor";
 
 export default class Cards extends Component {
-   creditCount = 0; emptyValue = "";
+  creditCount = 0;
+  emptyValue = "";
   constructor(props) {
     super(props);
     this.state = {
       isInEditMode: false,
       value: this.props.questions,
       isupdated: false,
-      count:this.creditCount
+      count: this.creditCount
     };
   }
-  componentDidMount(){
-    axios.get('http://localhost:3002/users').then(res => {
-      console.log('resdsfsd',res);
-    this.creditCount = res.data[0].credit
-    })
+  componentDidMount() {
+    axios.get("http://localhost:3002/users").then(res => {
+      this.creditCount = res.data[0].credit;
+    });
   }
   changeEditMode(event) {
     event.preventDefault();
     this.setState({
       isInEditMode: !this.state.isInEditMode
     });
-    console.log("mpode", this.state.isInEditMode);
-    // this.renderEditView();
   }
   UpdateQuestion(event) {
     event.preventDefault();
     this.setState({
       isInEditMode: false,
       update: true
+    });
+    toast.info("Successfully edited!", {
+      position: toast.POSITION.TOP_CENTER,
+      className: css({
+        background: "grey",
+        width: "400px",
+        borderRadius: "10px",
+        opacity: "0.05",
+        marginTop: '4rem'
+      }),
+      bodyClassName: css({})
     });
   }
   editText(event) {
@@ -47,72 +56,65 @@ export default class Cards extends Component {
   }
   goToBack(event) {
     event.preventDefault();
-    console.log("back");
     this.setState({
       value: this.props.questions,
       isInEditMode: false
     });
   }
-  addCredits = (event) => {
+  addCredits = event => {
     event.preventDefault();
-  
-    console.log("in credits",this.creditCount);
+
     this.creditCount++;
     this.setState({
       isupdated: true,
-      count:this.creditCount
+      count: this.creditCount
     });
-    const newCredit={
-      id:1,
-      name:"aishwarya",
-      credit:this.creditCount
-    }
-    console.log('count')
-    axios.put(`http://localhost:3002/users/${newCredit.id}`,newCredit)
-          .then(res => {
-            console.log("credit",res);
-          });
-           
+    const newCredit = {
+      id: 1,
+      name: "aishwarya",
+      credit: this.creditCount
+    };
+    axios
+      .put(`http://localhost:3002/users/${newCredit.id}`, newCredit)
+      .then(res => {
+      });
+
     toast.info("Successfully published!", {
+      autoClose: true,
       position: toast.POSITION.TOP_CENTER,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-    }
-    );
-
-
+      className: css({
+        background: "#6A9377",
+        width: "400px",
+        height: "10px",
+        borderRadius: "10px",
+        opacity: "0.05",
+        border: "none",
+        marginTop: '4rem'
+      })
+    });
   };
   delete = () => {
     this.setState({
-      value: this.emptyValue,
+      value: this.emptyValue
     });
-    toast.info("Successfully edited!", {
+    toast.info("Successfully deleted!", {
       position: toast.POSITION.TOP_CENTER,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-    }
-    );
-    console.log('delete',this.state.value)
-  }
+      className: css({
+        background: "#AF7E7E",
+        width: "400px",
+        borderRadius: "10px",
+        opacity: "0.05",
+        marginTop: '4rem'
+      }),
+      bodyClassName: css({})
+    });
+  };
   render() {
-    console.log("dad", this.state.value, "the", this.props.questions);
     return (
       <Fragment>
-<ToastContainer
-position="top-right"
-autoClose={2000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick={true}
-rtl={false}
-pauseOnVisibilityChange
-
-/>        <div className="ui very padded text container">
-          <Card fluid  id="card">
+        <div className="ui very padded text container">
+          <ToastContainer autoClose={2000} />
+          <Card fluid id="card">
             <Card.Content>
               {this.state.isInEditMode === true ? (
                 <div>
@@ -132,6 +134,7 @@ pauseOnVisibilityChange
                     Cancel
                   </button>
                   <button
+                    id="style"
                     className="ui primary button right floated"
                     onClick={this.UpdateQuestion.bind(this)}
                   >
@@ -142,14 +145,18 @@ pauseOnVisibilityChange
                 <Fragment>
                   <div className="ui grid">
                     <div className="ten wide column" id="text1">
-                      <Card.Header><span>{this.props.num}</span>.&nbsp; &nbsp; &nbsp;
+                      <Card.Header>
+                        <span>{this.props.num}</span>.&nbsp; &nbsp; &nbsp;
                         {this.state.update === true
                           ? this.state.value
                           : this.props.questions}
                       </Card.Header>
                     </div>
                     <div className="six wide column" id="text2">
-                      <div className="ui icon menu right floated" id="childIcons">
+                      <div
+                        className="ui icon menu right floated"
+                        id="childIcons"
+                      >
                         {this.state.isupdated ? (
                           <a
                             id="iconSize"
@@ -186,7 +193,7 @@ pauseOnVisibilityChange
                           <a
                             id="iconSize"
                             className="item"
-                             href="/"
+                            href="/"
                             data-tooltip="edit"
                             data-position="bottom left"
                             onClick={this.changeEditMode.bind(this)}
@@ -217,9 +224,7 @@ pauseOnVisibilityChange
                             {" "}
                             <i className="send icon" />{" "}
                           </a>
-                          
                         )}
-                        
                       </div>
                     </div>
                   </div>

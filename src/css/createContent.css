@@ -9,3 +9,23 @@
   font-size: 15px;
   word-spacing: 6px;
 }
+#scroll{
+  overflow-y:scroll;
+  max-height: 30rem;
+}
+#scroll::-webkit-scrollbar {
+  width: 0.5em;
+  /* color: blue; */
+}
+
+#scroll::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+#scroll::-webkit-scrollbar-thumb {
+background-color:orange;
+outline: 1px solid slategrey;
+}
+.more{
+  display: none;
+}

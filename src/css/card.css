@@ -44,3 +44,11 @@
 form{
     padding-bottom: 1rem
 }
+#cardPadding{
+  padding-top: 3rem;
+  background: #f8f8f8;
+}
+#textStyle{
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
