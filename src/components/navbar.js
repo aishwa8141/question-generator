@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, Menu, Dropdown, Icon, Label, Header } from 'semantic-ui-react';
-import { Redirect } from 'react-router';
+import { Redirect ,Link } from 'react-router-dom';
+import '../css/router.css'
 // import API from '../utils/Api'
 
 class Navbar extends React.Component {
@@ -21,9 +22,9 @@ class Navbar extends React.Component {
   updateCredits=(userId,value)=>{
     //axios call for credits api to update
   }
-gotoContentList(){
- return <Redirect to="/contentList"></Redirect>
-}
+// gotoContentList(){
+//  return <a to="/contentList"></Link>
+// }
   render() { 
     const trigger = (
       <span>
@@ -46,7 +47,7 @@ gotoContentList(){
             <Dropdown trigger={trigger} pointing='top right' icon={null}>
               <Dropdown.Menu>
                 <Dropdown.Header>{sessionStorage.getItem("userName")}</Dropdown.Header>
-                <Dropdown.Item onClick={this.gotoContentList}><Icon name='clipboard outline' />Content List</Dropdown.Item>
+              <Dropdown.Item onClick={this.gotoContentList}><Icon name='clipboard outline' /> <a href="/contentList" id="atag"> Content List</a></Dropdown.Item>
                 <Dropdown.Item onClick={this.handleSignOut}><Icon name='sign out' />Sign Out</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
