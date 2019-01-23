@@ -5,7 +5,7 @@ import { Form } from "semantic-ui-react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { css } from "glamor";
 
 export default class Cards extends Component {
    creditCount = 0; emptyValue = "";
@@ -15,7 +15,8 @@ export default class Cards extends Component {
       isInEditMode: false,
       value: this.props.questions,
       isupdated: false,
-      count:this.creditCount
+      count:this.creditCount,
+      delete:true
     };
   }
   componentDidMount(){
@@ -38,6 +39,16 @@ export default class Cards extends Component {
       isInEditMode: false,
       update: true
     });
+    toast.info("Successfully edited!", {
+      position: toast.POSITION.TOP_CENTER,
+      className: css({
+        background: "orange",
+        width: "400px",
+        borderRadius: "10px",
+        opacity: "0.2"
+      }),
+      bodyClassName: css({})
+    });
   }
   editText(event) {
     event.preventDefault();
@@ -50,7 +61,7 @@ export default class Cards extends Component {
     console.log("back");
     this.setState({
       value: this.props.questions,
-      isInEditMode: false
+      isInEditMode: true
     });
   }
   addCredits = (event) => {
@@ -72,30 +83,34 @@ export default class Cards extends Component {
           .then(res => {
             console.log("credit",res);
           });
-           
-    toast.info("Successfully published!", {
-      position: toast.POSITION.TOP_CENTER,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-    }
-    );
-
+          toast.info("Successfully published!", {
+            position: toast.POSITION.TOP_CENTER,
+            className: css({
+              background: "green",
+              width: "400px",
+              borderRadius: "10px",
+              opacity: "0.2"
+            }),
+            bodyClassName: css({})
+          });
 
   };
   delete = () => {
     this.setState({
       value: this.emptyValue,
+      update:!this.state.update,
+      delete:true
     });
-    toast.info("Successfully edited!", {
+    toast.info("Successfully deleted!", {
       position: toast.POSITION.TOP_CENTER,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-    }
-    );
+      className: css({
+        background: "red",
+        width: "400px",
+        borderRadius: "10px",
+        opacity: "0.1"
+      }),
+      bodyClassName: css({})
+    });
     console.log('delete',this.state.value)
   }
   render() {
@@ -111,8 +126,8 @@ closeOnClick={true}
 rtl={false}
 pauseOnVisibilityChange
 
-/>        <div className="ui very padded text container">
-          <Card fluid  id="card">
+/>        <div className="ui very padded text container" >
+          <Card fluid style={{"display":(this.state.delete===true ? "block": "none")}} id="card">
             <Card.Content>
               {this.state.isInEditMode === true ? (
                 <div>
@@ -155,7 +170,7 @@ pauseOnVisibilityChange
                           <a
                             id="iconSize"
                             className="item"
-                            href="/"
+                            // href="/"
                             data-tooltip="It's published"
                             data-position="bottom left"
                           >
@@ -165,7 +180,7 @@ pauseOnVisibilityChange
                           <a
                             id="iconSize"
                             className="item"
-                            // href="/"
+                            // href="/contentPage"
                             data-tooltip="delete"
                             data-position="bottom left"
                             onClick={this.delete}
@@ -177,7 +192,7 @@ pauseOnVisibilityChange
                           <a
                             id="iconSize"
                             className="item"
-                            href="/"
+                            // href="/"
                             data-tooltip="It's published"
                             data-position="bottom left"
                           >
@@ -187,7 +202,7 @@ pauseOnVisibilityChange
                           <a
                             id="iconSize"
                             className="item"
-                             href="/"
+                            //  href="/contentPage"
                             data-tooltip="edit"
                             data-position="bottom left"
                             onClick={this.changeEditMode.bind(this)}
@@ -199,7 +214,7 @@ pauseOnVisibilityChange
                         {this.state.isupdated ? (
                           <a
                             className="item"
-                            href="/content"
+                            // href="/content"
                             id="iconSize"
                             data-tooltip="It's published"
                             data-position="bottom left"
@@ -210,7 +225,7 @@ pauseOnVisibilityChange
                           <a
                             className="item"
                             id="iconSize"
-                            href="/"
+                            // href="/contentPage"
                             data-tooltip="publish"
                             data-position="bottom left"
                             onClick={this.addCredits}

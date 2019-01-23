@@ -34,18 +34,14 @@ export default class Content extends Component {
       }
 	contentList = () => {
 		
-		return this.items.map(( item , i)=> 
-			<Fragment  key={i}>
-				<div className="ui grid">
-				<div className="fourteen wide column">
-			<Card fluid header={item.name} meta={ item.question.length +" Questions"} description={item.shortDescription} onClick={this.gotoContent.bind(this,item)}	></Card>
-			</div>
-			<div className="two wide column  centered">
-			<Card  meta={ item.question.length +" Questions"} ></Card>
-			</div>
-			</div>
-			</Fragment>
-			)
+		return this.items.map( (item,i) => 
+		<Fragment  key={i}>
+			
+			<a className="ui orange right ribbon label align centered">{ item.question.length}&nbsp;Questions</a>
+			<Card key={i}fluid header={item.name} meta={ item.question.length +" Questions"} description={item.shortDescription} onClick={this.gotoContent.bind(this,item)}	></Card>
+			
+		   </Fragment>
+	)
 	}
 
 	render() {
