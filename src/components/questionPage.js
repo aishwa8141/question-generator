@@ -37,7 +37,9 @@ export class QuestionPage extends Component {
             pathname:'/content', 
 
         });
-    }
+        console.log("data", this.state.results.length);
+      }
+     
   render() {
     return (
       <Fragment>

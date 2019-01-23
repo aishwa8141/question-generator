@@ -8,6 +8,7 @@ import {
   Segment
 } from "semantic-ui-react";
 
+
 import Navbar from "./navbar";
 
 export default class Home extends Component {
@@ -84,6 +85,7 @@ export default class Home extends Component {
             </Grid.Row>
           </Grid>
         </Segment>
+       
       </Fragment>
     );
   }

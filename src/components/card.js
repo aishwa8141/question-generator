@@ -3,8 +3,9 @@ import { TextArea, Card } from "semantic-ui-react";
 import "../css/card.css";
 import { Form } from "semantic-ui-react";
 import axios from "axios";
+
 export default class Cards extends Component {
-   creditCount = 0;
+   creditCount = 0; emptyValue = "";
   constructor(props) {
     super(props);
     this.state = {
@@ -14,6 +15,13 @@ export default class Cards extends Component {
       count:this.creditCount
     };
   }
+  componentDidMount(){
+    axios.get('http://localhost:3002/users').then(res => {
+      console.log('resdsfsd',res);
+    this.creditCount = res.data[0].credit
+    })
+  }
+
   changeEditMode(event) {
     event.preventDefault();
     this.setState({
@@ -52,16 +60,22 @@ export default class Cards extends Component {
       count:this.creditCount
     });
     const newCredit={
-      
-      userName:"aish",
-      coins:this.creditCount
+      id:1,
+      name:"aishwarya",
+      credit:this.creditCount
     }
     console.log('count')
-    axios.patch(`http://localhost:3002/users/1`,newCredit)
+    axios.put(`http://localhost:3002/users/${newCredit.id}`,newCredit)
           .then(res => {
             console.log("credit",res);
           });
   };
+  delete = () => {
+    this.setState({
+      value: this.emptyValue,
+    });
+    console.log('delete',this.state.value)
+  }
   render() {
     console.log("dad", this.state.value, "the", this.props.questions);
     return (
@@ -119,9 +133,10 @@ export default class Cards extends Component {
                           <a
                             id="iconSize"
                             className="item"
-                            href="/"
+                            // href="/"
                             data-tooltip="delete"
                             data-position="bottom left"
+                            onClick={this.delete}
                           >
                             <i className="trash icon" />{" "}
                           </a>
