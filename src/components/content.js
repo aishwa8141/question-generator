@@ -13,7 +13,7 @@ export default class Content extends Component {
      num :this.number,
      descript: this.props.location.state.description,
      expanded: false,
-     coins: 0
+     coins: this.props.location.state.coins
       };
  }
  componentDidMount() {
@@ -31,7 +31,7 @@ export default class Content extends Component {
  render() {
    return (
      <Fragment>
-       <Navbar></Navbar>
+       <Navbar coins={this.state.coins}></Navbar>
        <div className="ui centered align grid" id="align">
          {/* <h2>Generated Contents and Questions </h2> */}
        </div>

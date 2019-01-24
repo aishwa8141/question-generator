@@ -13,7 +13,7 @@ export default class Content extends Component {
 	constructor(props) {
 		super(props);
 		this.state= {
-			coins: 0
+			coins: this.props.location.state
 		}
 		this.randomList = Array();
 		while(this.randomList.length <5) {
@@ -25,24 +25,25 @@ export default class Content extends Component {
 		this.items = this.randomList.map( num => content.list.data[num])
 	}
 
-	// componentDidMount(){
-	// 	if(this.props.location.state === undefined){
-	// 		this.props.history.push('/');
-	// 	}
-	// 	else{
-	// 		this.generateStartTelemetry(this.props.location.state);
-	// 		if(this.props.location.state.coinsGiven === undefined){
-	// 			this.setState({coins: 0})
-	// 		}else{
-	// 			if(sessionStorage.getItem("coins") == null){
-	// 				this.setState({coins: this.props.location.state.coinsGiven})
-	// 			}
-	// 			else{
-	// 				this.setState({coins: sessionStorage.getItem("coins")})
-	// 			}
-	// 		}
-	// 	}
-	// }
+	componentDidMount(){
+		// if(this.props.location.state === undefined){
+		// 	this.props.history.push('/');
+		// }
+		// else{
+		// 	this.generateStartTelemetry(this.props.location.state);
+		// 	if(this.props.location.state.coinsGiven === undefined){
+		// 		this.setState({coins: 0})
+		// 	}else{
+		// 		if(sessionStorage.getItem("coins") == null){
+		// 			this.setState({coins: this.props.location.state.coinsGiven})
+		// 		}
+		// 		else{
+		// 			this.setState({coins: sessionStorage.getItem("coins")})
+		// 		}
+		// 	}
+		// }
+		console.log(this.state.coins)
+	}
 
 	generateInteractTelemetry(visitorInfo) {
 		const telemetry = {
@@ -84,10 +85,11 @@ export default class Content extends Component {
 
 
 	gotoContent(index) {
-		this.generateInteractTelemetry(this.props.location.state)
+		// this.generateInteractTelemetry(this.props.location.state)
         this.props.history.push({
             pathname:'/contentPage',
-            state:{description:index}
+			state:{description:index, coins:this.state.coins}
+			
         });
       }
 	contentList = () => {
@@ -105,7 +107,7 @@ export default class Content extends Component {
 	render() {
 		return (
 			<div>
-			<Navbar/>
+			<Navbar coins={this.state.coins}/>
 			<div id="cardPadding">
 				<Container >
       				<div className="ui centered align grid"><h2 id="textStyle">Crowd Sourcing: Questions Curations</h2></div>

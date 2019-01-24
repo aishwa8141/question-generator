@@ -24,7 +24,8 @@ class Login extends React.Component {
       loading: false,
       error: "",
       delay: 1000,
-      userid: ""
+      userid: "",
+      isRedirect : false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -55,16 +56,21 @@ class Login extends React.Component {
     API.post(`login`, { request })
       .then(res => {
         sessionStorage.setItem("userName", res.data.result.Visitor.name);
+        console.log('res',res);
+        this.setState({
+          userid: res.data.result.code
+        })
         if (res.data.result.Visitor) {
 
           this.props.history.push({state: res.data.result.Visitor})
-          this.generateStartTelemetry(this.props.location.state);
+          // this.generateStartTelemetry(this.props.location.state);
           this.props.history
             .push({
               pathname: "/contentList",
-            })
-        }
-      })
+              state: res.data.result.Visitor.coinsGiven
+            })     
+           }
+          })
       .catch(e => {
         console.log("error");
         return;
@@ -188,11 +194,13 @@ class Login extends React.Component {
                       Login
                     </Button>
                   </Form>
+
                 </Segment>
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </Segment>
+        {/* {this.state.isRedirect=== true ?<Redirect to={{ pathname: "/ContentList", state: { username: this.state.username } }}/>:  */}
       </Container>
     );
   }

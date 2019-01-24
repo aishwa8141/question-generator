@@ -9,6 +9,7 @@ class Navbar extends React.Component {
     super(props);
     this.state = {
       signOut: false,
+      coins: this.props.coins
     };
   }
   handleSignOut = () =>{
@@ -40,7 +41,7 @@ class Navbar extends React.Component {
             <Image size="mini"
               src='https://clipart.info/images/ccovers/1495750444Gold-Coins-PNG-Clipart.png'
               verticalAlign='middle' />
-            <span><b>{this.props.credits}</b></span>
+            <span><b>{this.state.coins}</b></span>
           </Menu.Item>
 
           <Menu.Item position='right' >
