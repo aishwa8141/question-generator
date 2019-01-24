@@ -26,7 +26,7 @@ componentDidMount() {
 
   }
   else{
-    if(this.UNSAFE_componentWillMount.state.coins){
+    if(this.state.coins){
       this.setState({
         coins:this.props.location.state.coins
       })

@@ -28,6 +28,9 @@ class Navbar extends React.Component {
 // gotoContentList(){
 //  return <a to="/contentList"></Link>
 // }
+gotoContentList(){
+  document.getElementById("navigation_link").click();
+}
  render() {
    const trigger = (
      <span>
@@ -35,7 +38,7 @@ class Navbar extends React.Component {
 ' size='mini' />
      </span>
    )
-
+   
    return (
      <div>
      {(this.state.signOut)? <Redirect to="/"/>:
@@ -52,11 +55,14 @@ class Navbar extends React.Component {
            <Dropdown trigger={trigger} pointing='top right' icon={null}>
              <Dropdown.Menu>
                <Dropdown.Header>{sessionStorage.getItem("userName")}</Dropdown.Header>
-             <Dropdown.Item onClick={this.gotoContentList}><Icon name='clipboard outline' /> <a href="/contentList" id="atag"> Content List</a></Dropdown.Item>
+             {/* <Dropdown.Item onClick={this.gotoContentList}><Icon name='clipboard outline' /> <a href="/contentList" id="atag"> Content List</a></Dropdown.Item> */}
+             <Dropdown.Item onClick={this.gotoContentList}><Icon name='clipboard outline' />Content List</Dropdown.Item>
                <Dropdown.Item onClick={this.handleSignOut}><Icon name='sign out' />Sign Out</Dropdown.Item>
              </Dropdown.Menu>
            </Dropdown>
          </Menu.Item>
+         <Link to="/contentList" id="navigation_link"/>
+
        </Menu>}
        </div>
    );
