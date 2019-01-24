@@ -13,6 +13,8 @@ import {
 import QrReader from "react-qr-scanner";
 import "../css/style.css";
 import axios from "axios";
+import API from "../utils/Api";
+import SessionIdGenerator from "../utils/SessionIdGenerator";
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -38,29 +40,70 @@ class Login extends React.Component {
       return;
     }
     this.setState({ submitted: true });
+    sessionStorage.setItem("userCode", userid);
     this.setState({ loading: true });
     const request = {
-      code: this.state.userid,
+      code: userid,
       roleCode: "TCH1",
-      stallCode: "STA6",
-      ideaCode: "IDE6"
+      stallCode: "STA7",
+      ideaCode: "IDE21"
     };
 
-    axios
-      .post(`https://dev.ekstep.in/api/devcon/v3/login`, { request })
+    API.post(`login`, { request })
       .then(res => {
+        sessionStorage.setItem("userName", res.data.result.Visitor.name);
         if (res.data.result.Visitor) {
-          this.props.history.push({
-            pathname: "/contentList",
-            state: res.data.result.Visitor
-          });
+
+          this.props.history.push({state: res.data.result.Visitor})
+          this.generateStartTelemetry(this.props.location.state);
+          this.props.history
+            .push({
+              pathname: "/contentList",
+            })
         }
       })
-
       .catch(e => {
+        console.log("error");
         return;
       });
   }
+
+
+
+	generateStartTelemetry(visitorInfo) {
+		const edata = { type: "bazaar", mode: "play" };
+		// const did = machineIdSync();
+		const telemetry = {
+				eid: "DC_START",
+				did: '98912984-c4e9-5ceb-8000-03882a0485e4',
+				ets: (new Date()).getTime(),
+				dimensions: {
+						'visitorId': visitorInfo.code,
+						'visitorName': visitorInfo.name,
+						'stallId': "STA7",
+						'stallName': "Bazaar",
+						'ideaId': "IDE21",
+						'ideaName': "Crowd Sourcing",
+						'edata': edata
+				}
+		}
+		const event = telemetry;
+		const request = {
+				"events": [event]
+		};
+
+		console.log('telemetry request', request)
+
+		axios.post(`http://52.172.188.118:3000/v1/telemetry`, request)
+				.then(data => {
+						console.log("telemetry registered successfully", data);
+				}).catch(err => {
+						console.log("telemetry registration error", err);
+				})
+}
+
+
+
   handleScan(data) {
     if (data) {
       this.setState({

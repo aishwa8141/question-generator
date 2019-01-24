@@ -2,12 +2,13 @@ import React, { Component, Fragment } from "react";
 import { TextArea, Card } from "semantic-ui-react";
 import "../css/card.css";
 import { Form } from "semantic-ui-react";
+import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { css } from "glamor";
-
+var creditCount=0;
 export default class Cards extends Component {
-  creditCount = 0;
+  
   emptyValue = "";
   constructor(props) {
     super(props);
@@ -15,7 +16,7 @@ export default class Cards extends Component {
       isInEditMode: false,
       value: this.props.questions,
       isupdated: false,
-      count: this.creditCount,
+      count: creditCount,
       delete: false,
       quesNumber: this.props.num
     };
@@ -27,10 +28,12 @@ export default class Cards extends Component {
     });
   }
   UpdateQuestion(event) {
+    creditCount++;
     event.preventDefault();
     this.setState({
       isInEditMode: false,
-      update: true
+      update: true,
+      count:creditCount
     });
     toast.info("Successfully edited!", {
       position: toast.POSITION.TOP_CENTER,
@@ -42,6 +45,25 @@ export default class Cards extends Component {
       }),
       bodyClassName: css({})
     });
+    const request= {
+      id: "open-saber.registry.update",
+      ver: "1.0",
+      ets: "11234",
+      params: {
+        did: "",
+        key: "",
+        msgid: ""
+      },
+      request: {
+        Visitor: {
+          code: "VIS501",
+          coinsGiven: creditCount
+        }
+      }
+    }
+    axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res',res,creditCount)})
+
+    console.log('cd',this.state.count)
   }
   editText(event) {
     event.preventDefault();
@@ -58,18 +80,18 @@ export default class Cards extends Component {
   }
   addCredits = event => {
     event.preventDefault();
-
     this.creditCount++;
+  
     this.setState({
       isupdated: true,
       count: this.creditCount
     });
-    const newCredit = {
-      id: 1,
-      name: "aishwarya",
-      credit: this.creditCount
-    };
-
+ 
+    // axios.put(`http://localhost:3002/users/${newCredit.id}`,newCredit)
+    //       .then(res => {
+    //         console.log("credit",res);
+    //       });
+    
     toast.info("Successfully published!", {
       position: toast.POSITION.TOP_CENTER,
       className: css({
@@ -80,14 +102,34 @@ export default class Cards extends Component {
       }),
       bodyClassName: css({})
     });
+   const request= {
+      id: "open-saber.registry.update",
+      ver: "1.0",
+      ets: "11234",
+      params: {
+        did: "",
+        key: "",
+        msgid: ""
+      },
+      request: {
+        Visitor: {
+          code: "VIS501",
+          coinsGiven: this.creditCount
+        }
+      }
+    }
+    axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res',res,creditCount)})
   };
   delete = () => {
+    creditCount++;
     this.setState({
       value: this.emptyValue,
       update: !this.state.update,
       delete: !this.state.delete,
-      quesNumber: this.props.num
+      quesNumber: this.props.num,
+      count:this.creditCount
     });
+    
     toast.info("Successfully deleted!", {
       position: toast.POSITION.TOP_CENTER,
       className: css({
@@ -98,6 +140,25 @@ export default class Cards extends Component {
       }),
       bodyClassName: css({})
     });
+    const request= {
+      id: "open-saber.registry.update",
+      ver: "1.0",
+      ets: "11234",
+      params: {
+        did: "",
+        key: "",
+        msgid: ""
+      },
+      request: {
+        Visitor: {
+          code: "VIS501",
+          coinsGiven: creditCount
+        }
+      }
+    }
+    axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res',res,creditCount)})
+
+    console.log('cd',this.state.count)
   };
   render() {
     return (
