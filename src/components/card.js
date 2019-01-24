@@ -17,9 +17,11 @@ export default class Cards extends Component {
       value: this.props.questions,
       isupdated: false,
       count: creditCount,
+      coins:parseInt(this.props.coins),
       delete: false,
       quesNumber: this.props.num
     };
+    console.log('p',this.props.coins)
   }
   changeEditMode(event) {
     event.preventDefault();
@@ -29,6 +31,7 @@ export default class Cards extends Component {
   }
   UpdateQuestion(event) {
     creditCount++;
+  const val=creditCount+(this.state.coins);
     event.preventDefault();
     this.setState({
       isInEditMode: false,
@@ -57,11 +60,11 @@ export default class Cards extends Component {
       request: {
         Visitor: {
           code: "VIS501",
-          coinsGiven: creditCount
+          coinsGiven: val
         }
       }
     }
-    axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res',res,creditCount)})
+    axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res',res,val)})
 
     console.log('cd',this.state.count)
   }
@@ -80,8 +83,8 @@ export default class Cards extends Component {
   }
   addCredits = event => {
     event.preventDefault();
-    this.creditCount++;
-  
+    creditCount++;
+    const val=creditCount+(this.state.coins);
     this.setState({
       isupdated: true,
       count: this.creditCount
@@ -114,14 +117,15 @@ export default class Cards extends Component {
       request: {
         Visitor: {
           code: "VIS501",
-          coinsGiven: this.creditCount
+          coinsGiven: val
         }
       }
     }
-    axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res',res,creditCount)})
+    axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res',res,val)})
   };
   delete = () => {
     creditCount++;
+    const val=creditCount+(this.state.coins);
     this.setState({
       value: this.emptyValue,
       update: !this.state.update,
@@ -152,11 +156,11 @@ export default class Cards extends Component {
       request: {
         Visitor: {
           code: "VIS501",
-          coinsGiven: creditCount
+          coinsGiven: val
         }
       }
     }
-    axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res',res,creditCount)})
+    axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res',res,val)})
 
     console.log('cd',this.state.count)
   };

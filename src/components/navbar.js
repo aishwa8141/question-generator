@@ -3,13 +3,16 @@ import { Image, Menu, Dropdown, Icon, Label, Header } from 'semantic-ui-react';
 import { Redirect ,Link } from 'react-router-dom';
 import '../css/router.css'
 import API from '../utils/Api'
-import axios from 'axios'; 
+
 class Navbar extends React.Component {
  constructor(props) {
    super(props);
    this.state = {
      signOut: false,
+     coins: this.props.coins
+     
    };
+   console.log('co',this.state.coins)
  }
  handleSignOut = () =>{
    console.log("User Signed Out")
@@ -21,26 +24,10 @@ class Navbar extends React.Component {
 
  updateCredits=(userId,value)=>{
    //axios call for credits api to update
-   const request= {
-    id: "open-saber.registry.update",
-    ver: "1.0",
-    ets: "11234",
-    params: {
-      did: "",
-      key: "",
-      msgid: ""
-    },
-    request: {
-      Visitor: {
-        code: "VIS501",
-        coinsGiven: ""
-      }
-    }
-  }
-  axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res')})
-
  }
-
+// gotoContentList(){
+//  return <a to="/contentList"></Link>
+// }
  render() {
    const trigger = (
      <span>
@@ -55,9 +42,10 @@ class Navbar extends React.Component {
        <Menu inverted>
          <Menu.Item>
            <Image size="mini"
-             src='https://clipart.info/images/ccovers/1495750444Gold-Coins-PNG-Clipart.png'
+             src='https://clipart.info/images/ccovers/1495750444Gold-Coins-PNG-Clipart.png
+'
              verticalAlign='middle' />
-           <span><b>{this.props.credits}</b></span>
+           <span id="coins"><b>{this.state.coins}</b></span>
          </Menu.Item>
 
          <Menu.Item position='right' >
