@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, Menu, Dropdown, Icon, Label, Header } from 'semantic-ui-react';
 import { Redirect ,Link } from 'react-router-dom';
 import '../css/router.css'
-// import API from '../utils/Api'
+import API from '../utils/Api'
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -25,22 +25,22 @@ class Navbar extends React.Component {
 // gotoContentList(){
 //  return <a to="/contentList"></Link>
 // }
-  render() { 
+  render() {
     const trigger = (
       <span>
         <Image avatar src='https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png' size='mini' />
       </span>
-    ) 
-   
+    )
+
     return (
       <div>
       {(this.state.signOut)? <Redirect to="/"/>:
         <Menu inverted>
           <Menu.Item>
-            <Image size="mini" 
+            <Image size="mini"
               src='https://clipart.info/images/ccovers/1495750444Gold-Coins-PNG-Clipart.png'
               verticalAlign='middle' />
-            <span style={{marginLeft:'6px'}}><b>{this.props.credits}</b></span>
+            <span><b>{this.props.credits}</b></span>
           </Menu.Item>
 
           <Menu.Item position='right' >

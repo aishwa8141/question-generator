@@ -13,6 +13,7 @@ export default class Content extends Component {
      num :this.number,
      descript: this.props.location.state.description,
      expanded: false,
+     coins: 0
       };
  }
  componentDidMount() {
