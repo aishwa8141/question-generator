@@ -17,12 +17,13 @@ export default class Content extends Component {
 		}
 		this.randomList = Array();
 		while(this.randomList.length <5) {
-			var num = Math.floor(Math.random()*20)
+			var num = Math.floor(Math.random()*5)
 			if (this.randomList.indexOf(num) === -1) {
 				this.randomList.push(num)
 			}
 		}
 		this.items = this.randomList.map( num => content.list.data[num])
+		console.log('labal',this.items)
 	}
 
 	componentDidMount(){
