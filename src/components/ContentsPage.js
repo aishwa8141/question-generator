@@ -8,10 +8,12 @@ import '../css/card.css';
 import axios from 'axios';
 import Navbar from "./navbar";
 import * as content from "./contentData";
+import { throws } from "assert";
 
 export default class Content extends Component {
 	constructor(props) {
 		super(props);
+
 		console.log("the value of coin in session Storage",sessionStorage.getItem("coins"))
 
 		if(sessionStorage.getItem("coins")==null)
@@ -29,19 +31,6 @@ export default class Content extends Component {
 			}
 			
 		}
-	// 	if(sessionStorage.getItem("coins")==undefined){
-	// 	this.state= {
-	// 		coins: this.props.location.state
-	// 	}
-	// 	console.log("inside if")
-	// sessionStorage.setItem("coins",this.state.coins)
-	// }
-		// else{
-
-		// 	this.state= {
-		// 		coins: sessionStorage.getItem("coins")
-		// 	}}
-		// sessionStorage.setItem("coins",this.state.coins)
 		this.randomList = Array();
 		while(this.randomList.length <5) {
 			var num = Math.floor(Math.random()*5)
@@ -54,28 +43,7 @@ export default class Content extends Component {
 	}
 
 	componentDidMount(){
-		// if(this.props.location.state === undefined){
-		// 	this.props.history.push('/');
-		// }
-		// else{
-		// 	this.generateStartTelemetry(this.props.location.state);
-		// 	if(this.props.location.state.coinsGiven === undefined){
-		// 		this.setState({coins: 0})
-		// 	}else{
-		// 		if(sessionStorage.getItem("coins") == null){
-		// 			this.setState({coins: this.props.location.state.coinsGiven})
-		// 		}
-		// 		else{
-		// 			this.setState({coins: sessionStorage.getItem("coins")})
-		// 		}
-		// 	}
-		// }
 
-
-		// if(sessionStorage.getItem("coins")!=null){
-
-		// 	this.setState({coins:sessionStorage.getItem("coins")})
-		// ins)
 	}
 
 	generateInteractTelemetry(visitorInfo) {
@@ -121,7 +89,7 @@ export default class Content extends Component {
 		// this.generateInteractTelemetry(this.props.location.state)
         this.props.history.push({
             pathname:'/contentPage',
-			state:{description:index}
+			state:{description:index, coins:sessionStorage.getItem('coins'), userId:this.props.location.state.code}
 			
         });
       }
@@ -140,11 +108,11 @@ export default class Content extends Component {
 	render() {
 		return (
 			<div>
-			<Navbar coins={sessionStorage.getItem("coins")}/>
+			<Navbar coins={sessionStorage.getItem('coins')}/>
 			<div id="cardPadding">
 				<Container >
       				<div className="ui centered align grid"><h2 id="textStyle">Crowd Sourcing: Questions Curations</h2></div>
-      				<Card.Group  >
+      				<Card.Group>
 						{this.contentList()}
 					</Card.Group>
       			</Container>

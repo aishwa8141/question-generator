@@ -50,7 +50,7 @@ gotoContentList(){
              src='https://clipart.info/images/ccovers/1495750444Gold-Coins-PNG-Clipart.png
 '
              verticalAlign='middle' />
-           <span id="coins"><b>{this.state.coins}</b></span>
+           <span id="coins"><b>{this.props.coins}</b></span>
          </Menu.Item>
 
          <Menu.Item position='right' >
