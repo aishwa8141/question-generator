@@ -13,25 +13,11 @@ constructor(props) {
     num :this.number,
     descript: this.props.location.state.description,
     expanded: false,
-    coins: 0
      };
 }
 componentDidMount() {
   this.displayQuestion();
-  if(this.state.coins===undefined)
-  {
-    this.setState({
-      coins:0
-    });
-
-  }
-  else{
-    if(this.state.coins){
-      this.setState({
-        coins:this.props.location.state.coins
-      })
-    }
-  }
+  
 
 }
 displayQuestion = () => {
@@ -45,7 +31,7 @@ showButton = () => {
 render() {
   return (
     <Fragment>
-      <Navbar coins={this.state.coins}></Navbar>
+      <Navbar coins={sessionStorage.getItem("coins")}></Navbar>
       <div className="ui centered align grid" id="align">
         {/* <h2>Generated Contents and Questions </h2> */}
       </div>
@@ -74,7 +60,7 @@ render() {
       <div>
         <div id="ques">
           {this.state.questions.map((data, i) => (
-            <Cards key={i} questions={data.question} coins={this.state.coins} num={this.number++} />
+            <Cards key={i} questions={data.question} coins={sessionStorage.getItem("coins")} num={this.number++} />
           ))}
         </div>
       </div>

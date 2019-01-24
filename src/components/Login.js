@@ -64,7 +64,7 @@ class Login extends React.Component {
           this.props.history
             .push({
               pathname: "/contentList",
-              state: res.data.result.Visitor.coinsGiven
+              state: res.data.result.Visitor
             })     
            }
           })

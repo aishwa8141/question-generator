@@ -31,7 +31,8 @@ export default class Cards extends Component {
   }
   UpdateQuestion(event) {
     creditCount++;
-  const val=creditCount+(this.state.coins);
+  const val=Number(creditCount)+Number(sessionStorage.getItem("coins"));
+  sessionStorage.setItem("coins",val)
     event.preventDefault();
     this.setState({
       isInEditMode: false,
@@ -85,6 +86,7 @@ export default class Cards extends Component {
     event.preventDefault();
     creditCount++;
     const val=creditCount+(this.state.coins);
+    sessionStorage.setItem("coins",val)
     this.setState({
       isupdated: true,
       count: this.creditCount

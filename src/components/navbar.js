@@ -21,7 +21,9 @@ class Navbar extends React.Component {
    signOut: true,
    })
  }
-
+componentDidUpdate(){
+  console.log("con",sessionStorage.getItem("coins"))
+}
  updateCredits=(userId,value)=>{
    //axios call for credits api to update
  }
