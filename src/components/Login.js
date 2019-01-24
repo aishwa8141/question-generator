@@ -24,16 +24,14 @@ class Login extends React.Component {
       loading: false,
       error: "",
       delay: 1000,
-      userid: ""
+      userid: "",
+      isRedirect : false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleScan = this.handleScan.bind(this);
   }
   handleChange(e) {
-    console.log(e);
-    console.log(e.target);
-
     this.setState({ userid: e.target.value });
   }
   handleSubmit(e) {
@@ -55,16 +53,21 @@ class Login extends React.Component {
     API.post(`login`, { request })
       .then(res => {
         sessionStorage.setItem("userName", res.data.result.Visitor.name);
+        console.log('res',res);
+        this.setState({
+          userid: res.data.result.code
+        })
         if (res.data.result.Visitor) {
 
           this.props.history.push({state: res.data.result.Visitor})
-          this.generateStartTelemetry(this.props.location.state);
+          // this.generateStartTelemetry(this.props.location.state);
           this.props.history
             .push({
               pathname: "/contentList",
-            })
-        }
-      })
+              state: res.data.result.Visitor.coinsGiven
+            })     
+           }
+          })
       .catch(e => {
         console.log("error");
         return;
@@ -115,16 +118,11 @@ class Login extends React.Component {
       this.handleChange({
         target: { name: "userid", value: this.state.userid }
       });
-      console.log(data);
     } else {
-      console.log(data);
     }
   }
-  handleError(err) {
-    console.error(err);
-  }
+  handleError(err) {}
   onSignIn(response) {
-    console.log(response);
     sessionStorage.setItem("userid", response.profileObj.name);
     sessionStorage.setItem("userProfileImage", response.profileObj.imageUrl);
     this.setState({
@@ -132,7 +130,6 @@ class Login extends React.Component {
     });
   }
   onFailure(response) {
-    console.log("Login Failed");
     this.setState({
       redirect: false
     });
@@ -188,11 +185,13 @@ class Login extends React.Component {
                       Login
                     </Button>
                   </Form>
+
                 </Segment>
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </Segment>
+        {/* {this.state.isRedirect=== true ?<Redirect to={{ pathname: "/ContentList", state: { username: this.state.username } }}/>:  */}
       </Container>
     );
   }

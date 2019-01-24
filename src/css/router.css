@@ -13,7 +13,11 @@ h3 {
 #nav a img {
   width: 4rem !important;
 }
-.ui.inverted.menu .item, .ui.inverted.menu .item>a:not(.ui) {
+.ui.inverted.menu .item,
+.ui.inverted.menu .item > a:not(.ui) {
   background: 0 0;
   color: black;
+}
+b{
+  color: white;
 }
