@@ -29,9 +29,6 @@ class Login extends React.Component {
     this.handleScan = this.handleScan.bind(this);
   }
   handleChange(e) {
-    console.log(e);
-    console.log(e.target);
-
     this.setState({ userid: e.target.value });
   }
   handleSubmit(e) {
@@ -48,22 +45,21 @@ class Login extends React.Component {
       stallCode: "STA6",
       ideaCode: "IDE6"
     };
-    
+
     axios
       .post(`https://dev.ekstep.in/api/devcon/v3/login`, { request })
       .then(res => {
-        console.log("respomn", res);
-        if(res.data.result.Visitor){
-        this.props.history.push({
-          pathname: "/contentList",
-          state: res.data.result.Visitor
-        });
-      }
+        if (res.data.result.Visitor) {
+          this.props.history.push({
+            pathname: "/contentList",
+            state: res.data.result.Visitor
+          });
+        }
       })
-      
-      .catch(e =>{ console.log("error")
-    return});
 
+      .catch(e => {
+        return;
+      });
   }
   handleScan(data) {
     if (data) {
@@ -73,16 +69,11 @@ class Login extends React.Component {
       this.handleChange({
         target: { name: "userid", value: this.state.userid }
       });
-      console.log(data);
     } else {
-      console.log(data);
     }
   }
-  handleError(err) {
-    console.error(err);
-  }
+  handleError(err) {}
   onSignIn(response) {
-    console.log(response);
     sessionStorage.setItem("userid", response.profileObj.name);
     sessionStorage.setItem("userProfileImage", response.profileObj.imageUrl);
     this.setState({
@@ -90,7 +81,6 @@ class Login extends React.Component {
     });
   }
   onFailure(response) {
-    console.log("Login Failed");
     this.setState({
       redirect: false
     });
@@ -156,4 +146,3 @@ class Login extends React.Component {
   }
 }
 export default Login;
-
