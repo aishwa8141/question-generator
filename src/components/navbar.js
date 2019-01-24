@@ -41,7 +41,7 @@ class Navbar extends React.Component {
             <Image size="mini"
               src='https://clipart.info/images/ccovers/1495750444Gold-Coins-PNG-Clipart.png'
               verticalAlign='middle' />
-            <span><b>{this.state.coins}</b></span>
+            <span id="coins">{this.state.coins}</span>
           </Menu.Item>
 
           <Menu.Item position='right' >

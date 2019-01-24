@@ -32,9 +32,6 @@ class Login extends React.Component {
     this.handleScan = this.handleScan.bind(this);
   }
   handleChange(e) {
-    console.log(e);
-    console.log(e.target);
-
     this.setState({ userid: e.target.value });
   }
   handleSubmit(e) {
@@ -52,67 +49,53 @@ class Login extends React.Component {
       stallCode: "STA7",
       ideaCode: "IDE21"
     };
-
     API.post(`login`, { request })
       .then(res => {
         sessionStorage.setItem("userName", res.data.result.Visitor.name);
-        console.log('res',res);
+        console.log('res',res.data.result.Visitor.name);
         this.setState({
-          userid: res.data.result.code
+          userid: res.data.result.Visitor.code
         })
-        if (res.data.result.Visitor) {
-
-          this.props.history.push({state: res.data.result.Visitor})
-          // this.generateStartTelemetry(this.props.location.state);
           this.props.history
-            .push({
+.push({
               pathname: "/contentList",
-              state: res.data.result.Visitor.coinsGiven
+              state:res.data.result.Visitor
             })     
-           }
-          })
+           })
       .catch(e => {
-        console.log("error");
+        console.log("error IN LOGIN REQUEST");
         return;
       });
   }
-
-
-
-	generateStartTelemetry(visitorInfo) {
-		const edata = { type: "bazaar", mode: "play" };
-		// const did = machineIdSync();
-		const telemetry = {
-				eid: "DC_START",
-				did: '98912984-c4e9-5ceb-8000-03882a0485e4',
-				ets: (new Date()).getTime(),
-				dimensions: {
-						'visitorId': visitorInfo.code,
-						'visitorName': visitorInfo.name,
-						'stallId': "STA7",
-						'stallName': "Bazaar",
-						'ideaId': "IDE21",
-						'ideaName': "Crowd Sourcing",
-						'edata': edata
-				}
-		}
-		const event = telemetry;
-		const request = {
-				"events": [event]
-		};
-
-		console.log('telemetry request', request)
-
-		axios.post(`http://52.172.188.118:3000/v1/telemetry`, request)
-				.then(data => {
-						console.log("telemetry registered successfully", data);
-				}).catch(err => {
-						console.log("telemetry registration error", err);
-				})
+    generateStartTelemetry(visitorInfo) {
+        const edata = { type: "bazaar", mode: "play" };
+        // const did = machineIdSync();
+        const telemetry = {
+                eid: "DC_START",
+                did: '98912984-c4e9-5ceb-8000-03882a0485e4',
+                ets: (new Date()).getTime(),
+                dimensions: {
+                        'visitorId': visitorInfo.code,
+                        'visitorName': visitorInfo.name,
+                        'stallId': "STA7",
+                        'stallName': "Bazaar",
+                        'ideaId': "IDE21",
+                        'ideaName': "Crowd Sourcing",
+                        'edata': edata
+                }
+        }
+        const event = telemetry;
+        const request = {
+                "events": [event]
+        };
+        console.log('telemetry request', request)
+        axios.post(`http://52.172.188.118:3000/v1/telemetry`, request)
+                .then(data => {
+                        console.log("telemetry registered successfully", data);
+                }).catch(err => {
+                        console.log("telemetry registration error", err);
+                })
 }
-
-
-
   handleScan(data) {
     if (data) {
       this.setState({
@@ -121,16 +104,11 @@ class Login extends React.Component {
       this.handleChange({
         target: { name: "userid", value: this.state.userid }
       });
-      console.log(data);
     } else {
-      console.log(data);
     }
   }
-  handleError(err) {
-    console.error(err);
-  }
+  handleError(err) {}
   onSignIn(response) {
-    console.log(response);
     sessionStorage.setItem("userid", response.profileObj.name);
     sessionStorage.setItem("userProfileImage", response.profileObj.imageUrl);
     this.setState({
@@ -138,7 +116,6 @@ class Login extends React.Component {
     });
   }
   onFailure(response) {
-    console.log("Login Failed");
     this.setState({
       redirect: false
     });
@@ -194,7 +171,6 @@ class Login extends React.Component {
                       Login
                     </Button>
                   </Form>
-
                 </Segment>
               </Grid.Column>
             </Grid.Row>

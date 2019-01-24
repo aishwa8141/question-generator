@@ -13,10 +13,26 @@ export default class Content extends Component {
      num :this.number,
      descript: this.props.location.state.description,
      expanded: false,
-     coins: this.props.location.state.coins
+     coins: 0,
+    //  userId: this.props.location.state.userId
       };
  }
  componentDidMount() {
+
+if(this.props.location.state.Visitor.coinsGiven===undefined){
+console.log("inside the component di dmoubt",this.props.location.state.Visitor)
+this.setState({coins:0})
+
+}
+else{
+console.log("inside the else ")
+this.setState({coins:this.props.location.state.Visitor.coinsGiven})
+
+}
+
+
+
+
    this.displayQuestion();
 
  }
