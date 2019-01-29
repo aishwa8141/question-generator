@@ -6,9 +6,9 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { css } from "glamor";
-
+var creditCount=0;
 export default class Cards extends Component {
-  creditCount = 0;
+  
   emptyValue = "";
   constructor(props) {
     super(props);
@@ -16,15 +16,12 @@ export default class Cards extends Component {
       isInEditMode: false,
       value: this.props.questions,
       isupdated: false,
-      count: this.creditCount,
+      count: creditCount,
+      coins:parseInt(this.props.coins),
       delete: false,
       quesNumber: this.props.num
     };
-  }
-  componentDidMount() {
-    // axios.get("http://localhost:3002/users").then(res => {
-    //   this.creditCount = res.data[0].credit;
-    // });
+    console.log('p',this.props.coins)
   }
   changeEditMode(event) {
     event.preventDefault();
@@ -33,10 +30,13 @@ export default class Cards extends Component {
     });
   }
   UpdateQuestion(event) {
+    creditCount++;
+  const val=creditCount+(this.state.coins);
     event.preventDefault();
     this.setState({
       isInEditMode: false,
-      update: true
+      update: true,
+      count:creditCount
     });
     toast.info("Successfully edited!", {
       position: toast.POSITION.TOP_CENTER,
@@ -48,6 +48,25 @@ export default class Cards extends Component {
       }),
       bodyClassName: css({})
     });
+    const request= {
+      id: "open-saber.registry.update",
+      ver: "1.0",
+      ets: "11234",
+      params: {
+        did: "",
+        key: "",
+        msgid: ""
+      },
+      request: {
+        Visitor: {
+          code: "VIS501",
+          coinsGiven: val
+        }
+      }
+    }
+    axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res',res,val)})
+
+    console.log('cd',this.state.count)
   }
   editText(event) {
     event.preventDefault();
@@ -64,21 +83,18 @@ export default class Cards extends Component {
   }
   addCredits = event => {
     event.preventDefault();
-
-    this.creditCount++;
+    creditCount++;
+    const val=creditCount+(this.state.coins);
     this.setState({
       isupdated: true,
       count: this.creditCount
     });
-    const newCredit = {
-      id: 1,
-      name: "aishwarya",
-      credit: this.creditCount
-    };
+ 
     // axios.put(`http://localhost:3002/users/${newCredit.id}`,newCredit)
     //       .then(res => {
     //         console.log("credit",res);
     //       });
+    
     toast.info("Successfully published!", {
       position: toast.POSITION.TOP_CENTER,
       className: css({
@@ -89,14 +105,35 @@ export default class Cards extends Component {
       }),
       bodyClassName: css({})
     });
+   const request= {
+      id: "open-saber.registry.update",
+      ver: "1.0",
+      ets: "11234",
+      params: {
+        did: "",
+        key: "",
+        msgid: ""
+      },
+      request: {
+        Visitor: {
+          code: "VIS501",
+          coinsGiven: val
+        }
+      }
+    }
+    axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res',res,val)})
   };
   delete = () => {
+    creditCount++;
+    const val=creditCount+(this.state.coins);
     this.setState({
       value: this.emptyValue,
       update: !this.state.update,
       delete: !this.state.delete,
-      quesNumber: this.props.num
+      quesNumber: this.props.num,
+      count:this.creditCount
     });
+    
     toast.info("Successfully deleted!", {
       position: toast.POSITION.TOP_CENTER,
       className: css({
@@ -107,7 +144,25 @@ export default class Cards extends Component {
       }),
       bodyClassName: css({})
     });
-    console.log("delete", this.state.value);
+    const request= {
+      id: "open-saber.registry.update",
+      ver: "1.0",
+      ets: "11234",
+      params: {
+        did: "",
+        key: "",
+        msgid: ""
+      },
+      request: {
+        Visitor: {
+          code: "VIS501",
+          coinsGiven: val
+        }
+      }
+    }
+    axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res',res,val)})
+
+    console.log('cd',this.state.count)
   };
   render() {
     return (
@@ -168,72 +223,66 @@ export default class Cards extends Component {
                           id="childIcons"
                         >
                           {this.state.isupdated ? (
-                            <a
+                            <i
                               id="iconSize"
                               className="item"
-                              // href="/"
                               data-tooltip="It's published"
                               data-position="bottom left"
                             >
                               <i className="trash icon disabled" />{" "}
-                            </a>
+                            </i>
                           ) : (
-                            <a
+                            <i
                               id="iconSize"
                               className="item"
-                              // href="/contentPage"
                               data-tooltip="delete"
                               data-position="bottom left"
                               onClick={this.delete}
                             >
                               <i className="trash icon" />{" "}
-                            </a>
+                            </i>
                           )}
                           {this.state.isupdated ? (
-                            <a
+                            <i
                               id="iconSize"
                               className="item"
-                              // href="/"
                               data-tooltip="It's published"
                               data-position="bottom left"
                             >
                               <i className="edit icon disabled" />{" "}
-                            </a>
+                            </i>
                           ) : (
-                            <a
+                            <i
                               id="iconSize"
                               className="item"
-                              //  href="/contentPage"
                               data-tooltip="edit"
                               data-position="bottom left"
                               onClick={this.changeEditMode.bind(this)}
                             >
                               {" "}
                               <i className="edit icon" />{" "}
-                            </a>
+                            </i>
                           )}
                           {this.state.isupdated ? (
-                            <a
+                            <i
                               className="item"
-                              // href="/content"
                               id="iconSize"
                               data-tooltip="It's published"
                               data-position="bottom left"
                             >
                               <i className="send icon disabled" />{" "}
-                            </a>
+                            </i>
                           ) : (
-                            <a
+                            <i
                               className="item"
                               id="iconSize"
-                              // href="/contentPage"
                               data-tooltip="publish"
                               data-position="bottom left"
                               onClick={this.addCredits}
                             >
                               {" "}
                               <i className="send icon" />{" "}
-                            </a>
+                            </i>
                           )}
                         </div>
                       </div>
