@@ -13,26 +13,21 @@ constructor(props) {
     num :this.number,
     descript: this.props.location.state.description,
     expanded: false,
-    coins: 0
+    coins: this.props.location.state.coins,
+    visitorId:this.props.location.state.userId
      };
 }
 componentDidMount() {
+  console.log(this.state.coins);
   this.displayQuestion();
-  if(this.state.coins===undefined)
-  {
-    this.setState({
-      coins:0
-    });
+  
 
-  }
-  else{
-    if(this.UNSAFE_componentWillMount.state.coins){
-      this.setState({
-        coins:this.props.location.state.coins
-      })
-    }
-  }
-
+}
+updateCoins(coins){
+  this.setState({
+    coins:coins
+  })
+  console.log('Changed COins', this.state.coins);
 }
 displayQuestion = () => {
   this.setState({
@@ -45,7 +40,7 @@ showButton = () => {
 render() {
   return (
     <Fragment>
-      <Navbar coins={this.state.coins}></Navbar>
+      <Navbar coins={this.state.coins} ></Navbar>
       <div className="ui centered align grid" id="align">
         {/* <h2>Generated Contents and Questions </h2> */}
       </div>
@@ -74,7 +69,7 @@ render() {
       <div>
         <div id="ques">
           {this.state.questions.map((data, i) => (
-            <Cards key={i} questions={data.question} coins={this.state.coins} num={this.number++} />
+            <Cards key={i} questions={data.question} coins={sessionStorage.getItem("coins")} num={this.number++} updateCoins={this.updateCoins.bind(this)} userId= {this.state.visitorId}/>
           ))}
         </div>
       </div>

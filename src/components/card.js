@@ -31,12 +31,14 @@ export default class Cards extends Component {
   }
   UpdateQuestion(event) {
     creditCount++;
-  const val=creditCount+(this.state.coins);
+    const val=creditCount+(this.state.coins);
+    sessionStorage.setItem("coins",val)
     event.preventDefault();
     this.setState({
       isInEditMode: false,
       update: true,
-      count:creditCount
+      count:creditCount,
+      coins:val
     });
     toast.info("Successfully edited!", {
       position: toast.POSITION.TOP_CENTER,
@@ -59,14 +61,17 @@ export default class Cards extends Component {
       },
       request: {
         Visitor: {
-          code: "VIS501",
+          code: this.props.userId,
           coinsGiven: val
         }
       }
     }
-    axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res',res,val)})
+    axios.post('http://104.211.78.0:8080/update',request)
+    .then(res=>{
+      console.log('res',res,val);
+      this.props.updateCoins(this.state.coins);
+    })
 
-    console.log('cd',this.state.count)
   }
   editText(event) {
     event.preventDefault();
@@ -85,16 +90,12 @@ export default class Cards extends Component {
     event.preventDefault();
     creditCount++;
     const val=creditCount+(this.state.coins);
+    sessionStorage.setItem("coins",val)
     this.setState({
       isupdated: true,
-      count: this.creditCount
-    });
- 
-    // axios.put(`http://localhost:3002/users/${newCredit.id}`,newCredit)
-    //       .then(res => {
-    //         console.log("credit",res);
-    //       });
-    
+      count: this.creditCount,
+      coins:val
+    });    
     toast.info("Successfully published!", {
       position: toast.POSITION.TOP_CENTER,
       className: css({
@@ -105,6 +106,7 @@ export default class Cards extends Component {
       }),
       bodyClassName: css({})
     });
+    console.log('userId',this.props.userId)
    const request= {
       id: "open-saber.registry.update",
       ver: "1.0",
@@ -116,24 +118,29 @@ export default class Cards extends Component {
       },
       request: {
         Visitor: {
-          code: "VIS501",
+          code: this.props.userId,
           coinsGiven: val
         }
       }
     }
-    axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res',res,val)})
+    axios.post('http://104.211.78.0:8080/update',request)
+    .then(res=>{
+      console.log('res',res,val);
+      this.props.updateCoins(this.state.coins);
+  })
   };
   delete = () => {
     creditCount++;
     const val=creditCount+(this.state.coins);
+    sessionStorage.setItem("coins",val)
     this.setState({
       value: this.emptyValue,
       update: !this.state.update,
       delete: !this.state.delete,
       quesNumber: this.props.num,
-      count:this.creditCount
-    });
-    
+      count:this.creditCount,
+      coins:val
+    });    
     toast.info("Successfully deleted!", {
       position: toast.POSITION.TOP_CENTER,
       className: css({
@@ -155,12 +162,17 @@ export default class Cards extends Component {
       },
       request: {
         Visitor: {
-          code: "VIS501",
+          code: this.props.userId,
           coinsGiven: val
         }
       }
     }
-    axios.post('http://104.211.78.0:8080/update',request).then(res=>{console.log('res',res,val)})
+    axios.post('http://104.211.78.0:8080/update',request)
+    .then(res=>{
+      console.log('res',res);
+      this.props.updateCoins(this.state.coins);
+
+    })
 
     console.log('cd',this.state.count)
   };
